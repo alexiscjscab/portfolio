@@ -1,4 +1,4 @@
-import React from 'react';
+import React,{useState} from 'react';
 import {
     makeStyles, 
 } from '@material-ui/core';
@@ -7,13 +7,15 @@ import img from '../yo.jpeg';
 
 import TypeWriterEffect from "react-typewriter-effect";
 
-import styled from 'styled-components';
+import styled,{keyframes} from 'styled-components';
 
 import {
     SiGithub,
     SiGmail,
     SiLinkedin
 } from 'react-icons/si'
+
+import cv from '../cv/cv.pdf'
 
 // iconos
 export const icons = [
@@ -36,6 +38,11 @@ export const icons = [
 
 const About = ({ id, dark}) => {
 
+    const [cvTime,setCvTime] = useState(false);
+
+    setTimeout(() => {
+        setCvTime(true)
+    },11000)
 
     
 
@@ -56,7 +63,7 @@ const About = ({ id, dark}) => {
                     <div className={classes.content}>       
                         <TypeWriterEffect 
                             text="Hi, I'm Alexis Beas"
-                            textStyle={{fontSize: '3.5rem', color: 'white',margin: '5px',fontFamily: "'Lobster', cursive",textShadow: '2px 3px #000'}}
+                            textStyle={{fontSize: '3rem', color: 'white',margin: '5px',fontFamily: "'Lobster', cursive",textShadow: '2px 3px #000'}}
                             startDelay={110}
                             cursorColor="white"
                             typeSpeed={130}     
@@ -64,7 +71,7 @@ const About = ({ id, dark}) => {
                         />
                         <TypeWriterEffect 
                             
-                            textStyle={{fontSize: '2.5rem', color: 'white',marginTop:'10px',margin: '5px',fontFamily: "'Lobster', cursive",textShadow: '2px 3px #000'}}
+                            textStyle={{fontSize: '2.5rem', color: 'white',marginTop:'10px',margin: '5px',fontFamily: "'Lobster', cursive",textShadow: '2px 3px #000',marginBottom: '20px'}}
                             startDelay={3500}
                             cursorColor="white"
                             typeSpeed={130}
@@ -76,8 +83,18 @@ const About = ({ id, dark}) => {
                             multiTextDelay={1000}
                             hideCursorAfterText={true}
                         />
-                        
+                        {
+                            cvTime &&
+                            <Cv>
+                                <p>
+                                    <a href={cv} download>
+                                        Download CV
+                                    </a>
+                                </p>
+                            </Cv>
+                        }
                     </div>
+                    
                 </div>
                 {/* { bandera &&    */}
                 
@@ -107,6 +124,32 @@ const About = ({ id, dark}) => {
 }
 
 export default About
+
+const cvAnimation = keyframes`
+    from{
+        margin-right: 20%
+    }
+    to{
+        margin-rigth: 0%
+    }
+    `
+
+const Cv = styled.div`
+animation-name: ${cvAnimation};
+animation-duration: 2s; 
+a{
+        text-decoration: none;
+        color: #000;
+        font-family: 'Lobster', cursive;
+        font-size: 2.2rem;
+        text-shadow: 2px 3px #fff;
+        &:hover{
+           color:#fff;
+           text-shadow: 2px 3px #000;
+           border-bottom: 2px solid #fff
+        }
+    }
+`
 
 
 const Wawe = styled.div`
