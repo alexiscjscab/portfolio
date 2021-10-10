@@ -185,7 +185,7 @@ const useStyles = makeStyles((theme) => ({
         
         minHeight: "100vh",
         backgroundColor: 'rgba(0,137,255,1)',
-        background: 'linear-gradient(90deg, rgba(0,137,255,1) 0%, rgba(168,212,255,1) 50%, rgba(0,137,255,1) 100%)',
+        background: 'linear-gradient(90deg, rgba(0,137,255,1) 0%, #00bdd0 50%, rgba(0,137,255,1) 100%)',
         width: '100%',
         position: 'relative'
     },
