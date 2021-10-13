@@ -115,7 +115,7 @@ position: absolute;
     height: 150px;
 }
 .shape-fill {
-    fill: #2082d8;
+    fill: #00bdd0;
 }
 `
 
@@ -124,7 +124,7 @@ const useStyles = makeStyles((theme) => ({
     section: {
         minHeight: "100vh",
         backgroundColor: 'rgba(0,137,255,1)',
-        background: 'linear-gradient(90deg, rgba(0,137,255,1) 0%, rgba(168,212,255,1) 50%, rgba(0,137,255,1) 100%)',
+        background: 'linear-gradient(90deg, rgba(0,137,255,1) 0%, #00bdd0 50%, rgba(0,137,255,1) 100%)',
         width: '100%',
         position: 'relative'
     },
@@ -153,6 +153,7 @@ display: flex;
 justify-content: center;
 flex-direction: column;
 width: 400px;
+margin-top: 10px;
 
 
 font-family: 'Josefin Sans', sans-serif;
@@ -169,7 +170,7 @@ font-family: 'Josefin Sans', sans-serif;
         padding: 6px;
         background: transparent;
         border: 3px solid rgba(0, 0, 0, 0.3);
-        box-shadow: 10px 6px 0 rgba(32, 130, 216, 0.666);
+        box-shadow: 10px 6px 0 #00bdd0;
         color: #ffffff;
         border-radius: 50px;
         color: #000;
@@ -219,7 +220,7 @@ font-family: 'Josefin Sans', sans-serif;
         padding: 9px;
         color: #000;
         border-radius: 30px;
-        box-shadow: 15px 12px 0 rgba(32, 130, 216, 0.666);
+        box-shadow: 15px 12px 0 #00bdd0;
         font-family: 'Josefin Sans', sans-serif;
     }
     .inputTextarea textarea::placeholder{
@@ -243,7 +244,7 @@ font-family: 'Josefin Sans', sans-serif;
         background: transparent;
         font-family: 'Josefin Sans', sans-serif;
         border: 3px solid rgba(0, 0, 0, 0.3);
-        box-shadow: 8px 5px 0 rgba(32, 130, 216, 0.666);
+        box-shadow: 8px 5px 0 #00bdd0;
         color: #ffffff;
         border-radius: 50px;
         color: #000;
@@ -251,7 +252,7 @@ font-family: 'Josefin Sans', sans-serif;
         cursor: pointer;
         &:hover{
             color: #fff;
-            background: #2082d8;
+            background: #00bdd0;
             box-shadow: 8px 5px 0 rgba(10,10,10,0.5);
         }
     }
@@ -287,7 +288,7 @@ const Social = styled.div`
     }
 
     a:hover{
-        color: rgba(32, 130, 216,1);
+        color: #00bdd0;
     }
 
     .icon{

@@ -167,8 +167,8 @@ const useStyles = makeStyles((theme) => ({
               ),
             '&:hover':{
                 cursor: 'pointer',
-                color: '#2082d8',
-                borderBottom: '3px solid #2082d8'
+                color:'#00bdd0',
+                borderBottom: '3px solid #00bdd0'
             }
         }
     },
@@ -176,14 +176,14 @@ const useStyles = makeStyles((theme) => ({
         display: 'none',
         [theme.breakpoints.down('sm')]:{
             display: 'block',
-            color: '#2082d8',
+            color: '#00bdd0',
             position: 'absolute',
             top: 0,
             right: 12
         }
     },
     drawer:{
-        background: '#2082d8',
+        background: '#00bdd0',
         height: '130%',
         fontFamily: "'Josefin Sans', sans-serif"
     },
@@ -213,7 +213,10 @@ const useStyles = makeStyles((theme) => ({
         }
     },
     cancelIcon:{
-        color: '#fff',    
+        color: '#fff',
+        '&:hover':{
+            color: '#000'
+        }    
     },
     iconButton:{
         display: 'flex',

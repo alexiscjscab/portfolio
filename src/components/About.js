@@ -42,7 +42,7 @@ const About = ({ id, dark}) => {
 
     setTimeout(() => {
         setCvTime(true)
-    },11000)
+    },11500)
 
     
 
@@ -101,8 +101,8 @@ const About = ({ id, dark}) => {
              <Description> 
 
                     <TypeWriterEffect 
-                                text="I am someone creative, curious and I aim to improve myself every day"
-                                textStyle={{fontSize: '1.8rem', color: '#000',margin: '5px',fontFamily: "'Josefin Sans', sans-serif",textShadow: '2.5px 1px #fff', textAlign: 'center'}}
+                                text="I got to know web programming in early 2021 and decided to do the Henry bootcamp (+800hs) where I discovered my passion for code. I am someone creative, curious and always eager to learn new technologies."
+                                textStyle={{fontSize: '1.8rem', color: '#000',margin: '5px',fontFamily: "'Josefin Sans', sans-serif",textShadow: '2px 1px #fff', textAlign: 'center'}}
                                 startDelay={11000}
                                 cursorColor="white"
                                 typeSpeed={130}     

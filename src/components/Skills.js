@@ -116,7 +116,7 @@ position: absolute;
     height: 150px;
 }
 .shape-fill {
-    fill: #2082d8;}
+    fill: #00bdd0;}
 `
 
 const useStyles = makeStyles((theme) => ({
