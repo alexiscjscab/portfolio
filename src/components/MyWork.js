@@ -21,6 +21,31 @@ import imgE4 from './imgProject/ecommerce/4.png'
 import imgE6 from './imgProject/ecommerce/6.png'
 import imgE7 from './imgProject/ecommerce/7.png'
 
+
+import imgR1 from './imgProject/rick/1Rick.png'
+import imgR2 from './imgProject/rick/2Rick.png'
+import imgR3 from './imgProject/rick/3Rick.png'
+
+
+const imgR = [
+    {
+        img: imgR1,
+        id: 'imgR1',
+        link:'https://github.com/alexiscjscab/rickandmorty'
+    },
+    {
+        img: imgR2,
+        id: 'imgR2',
+        link:'https://github.com/alexiscjscab/rickandmorty'
+    },
+    {
+        img: imgR3,
+        id: 'imgR3',
+        link:'https://github.com/alexiscjscab/rickandmorty'
+    }
+]
+
+
 const imgE = [
     {
         img: imgE1,
@@ -120,7 +145,10 @@ const MyWork = ({ id, dark}) => {
                             
 
                             <a href='https://github.com/alexiscjscab/PI-Dogs-FT15a' target='_black'> <h1>Cute Clothes </h1> </a>
-                            <Slide  img={imgE} type={'Front End'}/>
+                            <Slide  img={imgE} type={'Front End E-Commerce'}/>
+                            
+                            <a href='https://github.com/alexiscjscab/rickandmorty' target='_black'> <h1>Rick And Morty </h1> </a>
+                            <Slide img={imgR} type={'HTML/ CSS/ JAVASCRIPT'}/>
                             
                         </div>
                        

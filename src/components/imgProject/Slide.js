@@ -2,20 +2,10 @@
 import React, {useRef, useEffect} from 'react';
 import styled from 'styled-components';
 
-// import img1 from './dogs/1.png'
-// import img2 from './dogs/2.png'
-// import img3 from './dogs/3.png'
-// import img4 from './dogs/4.png'
-// import img5 from './dogs/5.png'
-// import img6 from './dogs/6.png'
-// import img7 from './dogs/7.png'
+
 
 import {AiFillLeftCircle} from 'react-icons/ai';
 import {AiFillRightCircle} from 'react-icons/ai';
-
-
-
-
 
 
 
