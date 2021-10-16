@@ -15,7 +15,6 @@ const Slide = ({img, type}) => {
 
     const siguiente = () => {
         if(slideshow.current.children.length > 0){
-            console.log('si')
             //Obtener primer elemtno
             const primerElemento  = slideshow.current.children[0];
 
