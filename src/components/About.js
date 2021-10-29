@@ -52,7 +52,7 @@ const About = ({ id, dark}) => {
                 <ScrollAnimation
                     duration={2}
                     animateIn='bounceInRight'
-                    animateOut='bounceOutLeft'>
+                    >
                     <Ctn >
 
 
@@ -101,7 +101,7 @@ const About = ({ id, dark}) => {
                     </Ctn>
                 </ScrollAnimation>
             
-                <ScrollAnimation  animateIn='flipInY' animateOut='flipOutY'>
+                <ScrollAnimation  animateIn='flipInY'>
                     <Description> 
                         <h2>
                             I got to know web programming in early 2021 and decided to do the Henry bootcamp (+800hs) where I discovered my passion for code.   am  someone creative, curious and always eager to learn new technologies
@@ -128,7 +128,6 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: 'rgba(0,137,255,1)',
         background: 'linear-gradient(90deg, rgba(0,137,255,1) 0%, #00bdd0 50%, rgba(0,137,255,1) 100%)',
         color: '#fff',
-        position: 'relative'
     },
     sectiondark:{
         background: '#ddd',
