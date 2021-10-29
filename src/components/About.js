@@ -170,6 +170,12 @@ const Description = styled.div`
         
     }
 
+    @media screen and (max-width:400px){
+        width: 340px;
+        padding: 5px;
+        background: transparent;
+    }
+
 `
 
 

@@ -125,15 +125,28 @@ const Slider = styled.div`
    transition: .3s ease all;
    z-index: 100;
    /* max-height: 500px; */
-   a{
+   
 
     img{
-        width: 315px;
+        width: 800px;
+        height: 300px;
         border: 2px solid #000;
-       max-height: 10%;
-       object-fit: content
-   }
-   }
+        max-height: 10%;
+        object-fit: content;
+        @media screen and (max-width:900px){
+            width: 500px;
+            height: 200px
+        }
+        @media screen and (max-width:500px){
+            width: 360px;
+            height: 150px
+        }
+        @media screen and (max-width:360px){
+            width: 338px;
+            height: 130px;
+        }
+    }
+   
    .button{
        display: flex;
        justify-content: space-between;
