@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+import ScrollAnimation from 'react-animate-on-scroll'
 import {
     makeStyles, 
 } from '@material-ui/core';
-// import SlideCommerce from './imgProject/SlideCommerce';
 import Slide from './imgProject/Slide';
 
 import img1 from './imgProject/dogs/1.png'
@@ -207,7 +207,10 @@ const MyWork = ({ id, dark}) => {
         
                 <div className={classes.ctn}>
                    <Project id={id}>
-                        <h3>Projects</h3>
+                        <ScrollAnimation animateIn='wobble'
+                            initiallyVisible={true}>
+                            <h3>Projects</h3>
+                        </ScrollAnimation>                            
                         <div>
                             <a href='https://github.com/tomasellis/henry-ecommerce' target='_black'> <h1>App Dogs </h1> </a>
                             <Slide  img={imgDog} type={'Full Stack'}/>

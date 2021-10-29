@@ -5,8 +5,7 @@ import styled from 'styled-components';
 
 import {icons} from './About';
 
-// import {BsFillCaretUpFill} from 'react-icons/bs';
-
+import ScrollAnimation from 'react-animate-on-scroll'
 // import {Link} from 'react-scroll'
 
 import emailjs from "emailjs-com";
@@ -47,51 +46,49 @@ const Contact = ({ id, dark}) => {
 
     return (
         <div className={`${classes.section} ${dark && classes.sectiondark}`}>
-        <Wawe>
-        <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-        <path d="M1200 120L0 16.48 0 0 1200 0 1200 120z" className="shape-fill"></path>
-    </svg>
-        </Wawe>
-        <div className={classes.sectionContent}>
-        <div className={classes.ctn}>
         
-            
-            <Form id={id} onSubmit={sendEmail}>
+        <div className={classes.sectionContent}>
+                <ScrollAnimation animateIn='bounceInUp'>
+                    <div className={classes.ctn}>
 
-                <div className='input'>
-                    <label>Name</label>
-                    <input type='text' name='name' required maxLength={50}/>
-                </div>
+                        <Form id={id} onSubmit={sendEmail}>
+
+                            <div className='input'>
+                                <label>Name</label>
+                                <input type='text' name='name' required maxLength={50}/>
+                            </div>
+
+                            <div className='input email'>
+                                <label>Email</label>
+                                <input type='text'  name='email' required maxLength={70}/>
+                            </div>
+
+                            <div className='inputTextarea'>
+                                <label>Message</label>
+                                <textarea required name='message' placeholder=' Message...' maxLength={800}/>
+                            </div>
+
+                            <div className='send'>
+                                <input type='submit' value='SEND' />
+                            </div>
+                        </Form>
+                    </div>
+                    
+                    <Social>
+    
+                    {
+                        icons.map(({icon, text,link},index) =>(
+                                // eslint-disable-next-line react/jsx-no-target-blank
+                                <a href={link} target="_blank" rel={text} key={index}>
+                                    <span className='icon'>{icon}</span>
+                                    <span> {text}</span>
+                                </a>
+                            ))
+                    }
                 
-                <div className='input email'>
-                    <label>Email</label>
-                    <input type='text'  name='email' required maxLength={70}/>
-                </div>
-
-                <div className='inputTextarea'>
-                    <label>Message</label>
-                    <textarea required name='message' placeholder=' Message...' maxLength={800}/>
-                </div>
-
-                <div className='send'>
-                    <input type='submit' value='SEND' />
-                </div>
-            </Form>
+                    </Social>
+                </ScrollAnimation>
             
-            </div>
-            
-            <Social>
-
-            {
-                icons.map(({icon, text,link},index) =>(
-                        // eslint-disable-next-line react/jsx-no-target-blank
-                        <a href={link} target="_blank" rel={text} key={index}>
-                            <span className='icon'>{icon}</span>
-                            <span> {text}</span>
-                        </a>
-                    ))
-            }
-            </Social>
             </div>
             
         </div>
@@ -101,23 +98,7 @@ const Contact = ({ id, dark}) => {
 
 export default Contact
 
-const Wawe = styled.div`
-position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    overflow: hidden;
-    line-height: 0;
-    svg {
-    position: relative;
-    display: block;
-    width: calc(100% + 1.3px);
-    height: 150px;
-}
-.shape-fill {
-    fill: #00bdd0;
-}
-`
+
 
 
 const useStyles = makeStyles((theme) => ({
@@ -125,8 +106,6 @@ const useStyles = makeStyles((theme) => ({
         minHeight: "100vh",
         backgroundColor: 'rgba(0,137,255,1)',
         background: 'linear-gradient(90deg, rgba(0,137,255,1) 0%, #00bdd0 50%, rgba(0,137,255,1) 100%)',
-        width: '100%',
-        position: 'relative'
     },
     sectiondark: {
         color: "#2082d8",
@@ -136,13 +115,11 @@ const useStyles = makeStyles((theme) => ({
         display:'flex',
         justifyContent: 'center',
         flexDirection: 'column',
-        maxwidth: '80vw',
     },
     ctn:{
         display: 'flex',
         flexDirection: 'column',
         justifyContent: 'center',
-        alignItems: 'center',
         marginTop: '60px'
     }
 }))
@@ -153,8 +130,11 @@ display: flex;
 justify-content: center;
 flex-direction: column;
 width: 400px;
-margin-top: 50px;
-
+margin: 30px auto;
+@media screen and (max-width:380px){
+        width: 350px;
+        
+    }
 
 font-family: 'Josefin Sans', sans-serif;
 
@@ -164,6 +144,9 @@ font-family: 'Josefin Sans', sans-serif;
         margin: 10px;
         align-items: center;
         margin-top: 32px;
+        @media screen and (max-width:380px){
+        margin: 5px
+        }
     }
     .input input{
         outline: 0;
@@ -179,6 +162,9 @@ font-family: 'Josefin Sans', sans-serif;
         z-index: 9;
         width: 160px;
         margin-right: 50px;
+        @media screen and (max-width:380px){
+        margin-right: 20px
+        }
         font-family: 'Josefin Sans', sans-serif;
     }
 
@@ -188,13 +174,13 @@ font-family: 'Josefin Sans', sans-serif;
 
     .input label{
         line-height: 40px;
-  color: #000;
-  font-size: 18px;
-  font-weight: 500;
-  margin: 0 0 0 30px;
-  display: block;
-  pointer-events: none;
-  z-index: 9;
+        color: #000;
+        font-size: 18px;
+        font-weight: 500;
+        margin: 0 0 0 30px;
+        display: block;
+        pointer-events: none;
+        z-index: 9;
     }
 
     .inputTextarea{
@@ -222,6 +208,10 @@ font-family: 'Josefin Sans', sans-serif;
         border-radius: 30px;
         box-shadow: 15px 12px 0 #00bdd0;
         font-family: 'Josefin Sans', sans-serif;
+        @media screen and (max-width:380px){
+            width: 260px;
+            box-shadow: 13px 9px 0 #00bdd0;
+        }
     }
     .inputTextarea textarea::placeholder{
         color: #000;
@@ -230,12 +220,12 @@ font-family: 'Josefin Sans', sans-serif;
 
     .inputTextarea label{
         line-height: 40px;
-  color: #000;
-  font-size: 18px;
-  display: block;
-  text-align: center;
-  pointer-events: none;
-  font-weight: 500;
+        color: #000;
+        font-size: 18px;
+        display: block;
+        text-align: center;
+        pointer-events: none;
+        font-weight: 500;
     }
 
     .send input{
@@ -274,12 +264,9 @@ const Social = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    width: 100%;
     font-family: 'Josefin Sans', sans-serif;
     text-align: center;
-    margin-top: 40px;
-    height: 100px;
-        bottom: 0;
+    
     a{
         text-decoration: none;
         color: #000;

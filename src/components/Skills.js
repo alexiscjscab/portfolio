@@ -160,7 +160,9 @@ const Ctn = styled.div`
    margin: 60px 0;
    text-align: center;
     h2{ 
+        display: inline-block;
         font-size: 2.6rem;
         margin-bottom: 30px;
+        border-bottom: 2px solid #2082d8; 
     }
 `
