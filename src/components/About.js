@@ -104,7 +104,7 @@ const About = ({ id, dark}) => {
                 <ScrollAnimation  animateIn='flipInY'>
                     <Description> 
                         <h2>
-                        I am 23 years old, I am from Cordoba Argentina 🇦🇷, I met web programming at the beginning of 2021 and I decided to do Henry's bootcamp (+ 800hs) where I discovered my passion for code 👨‍💻. I am someone creative, curious and always eager to learn new technologies. My hobbies are Soccer ⚽, Basketball 🏀, Video Games 🎮, sharing with Friends 🍻, Rock N' Roll 🤘 and Good Music 🎧
+                        I am 23 years old, I am from Cordoba Argentina 🇦🇷, I met web programming at the beginning of 2021 and I decided to do Henry bootcamp (+ 800hs) where I discovered my passion for code 👨‍💻. I am someone creative, curious and always eager to learn new technologies. My hobbies are Soccer ⚽, Basketball 🏀, Video Games 🎮, sharing with Friends 🍻, Rock N' Roll 🤘 and Good Music 🎧
                         </h2>
                     </Description>
                 </ScrollAnimation>
