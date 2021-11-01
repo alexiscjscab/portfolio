@@ -48,7 +48,7 @@ const Contact = ({ id, dark}) => {
         <div className={`${classes.section} ${dark && classes.sectiondark}`}>
         
         <div className={classes.sectionContent}>
-                <ScrollAnimation animateIn='bounceInUp'>
+                <ScrollAnimation animateIn='bounceInLeft'>
                     <div className={classes.ctn}>
 
                         <Form id={id} onSubmit={sendEmail}>

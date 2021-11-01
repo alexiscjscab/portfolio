@@ -164,5 +164,6 @@ const Ctn = styled.div`
         font-size: 2.6rem;
         margin-bottom: 30px;
         border-bottom: 2px solid #2082d8; 
+        cursor: alias;
     }
 `

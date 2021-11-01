@@ -141,13 +141,13 @@ const useStyles = makeStyles((theme) => ({
         left: 0,
         right: 0,
         color:  '#fff',
-        height: '60px',
+        height: '70px',
         fontFamily: "'Josefin Sans', sans-serif"
     },
     toolbar:{
         display: 'flex',
         justifyContent:'center',
-        alignItems: 'center'
+        alignItems: 'flex-end'
     },
     menu:{
         [theme.breakpoints.down('sm')]:{
