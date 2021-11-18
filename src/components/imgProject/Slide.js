@@ -1,183 +1,174 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React, {useRef, useEffect} from 'react';
-import styled from 'styled-components';
+import React, { useRef, useEffect } from "react";
+import styled from "styled-components";
 
+import { AiFillLeftCircle } from "react-icons/ai";
+import { AiFillRightCircle } from "react-icons/ai";
 
+const Slide = ({ img, type }) => {
+  const slideshow = useRef(null);
+  const intervaloSlideshow = useRef(null);
 
-import {AiFillLeftCircle} from 'react-icons/ai';
-import {AiFillRightCircle} from 'react-icons/ai';
+  const siguiente = () => {
+    if (slideshow.current.children.length > 0) {
+      //Obtener primer elemtno
+      const primerElemento = slideshow.current.children[0];
 
+      slideshow.current.style.transition = `100ms ease-out all`;
 
+      //tamaño
 
-const Slide = ({img, type}) => {
-    const slideshow = useRef(null);
-    const intervaloSlideshow = useRef(null);
+      const tamañoSlide = slideshow.current.children[0].offsetWidth;
 
-    const siguiente = () => {
-        if(slideshow.current.children.length > 0){
-            //Obtener primer elemtno
-            const primerElemento  = slideshow.current.children[0];
+      //mover
+      slideshow.current.style.transform = `translateX(-${tamañoSlide}px)`;
 
-            slideshow.current.style.transition =`100ms ease-out all`;
+      const transicion = () => {
+        // cambio
+        slideshow.current.style.transition = "none";
+        slideshow.current.style.transform = `translateX(0)`;
 
-            //tamaño
+        /// mandar primer elemento al final
+        slideshow.current.appendChild(primerElemento);
 
-            const tamañoSlide = slideshow.current.children[0].offsetWidth
-            
-            //mover
-            slideshow.current.style.transform = `translateX(-${tamañoSlide}px)`
+        // remove evenListener
 
-            const transicion = () => {
-                // cambio
-            slideshow.current.style.transition = 'none';
-            slideshow.current.style.transform = `translateX(0)`
+        slideshow.current.removeEventListener("transitionend", transicion);
+      };
 
-                /// mandar primer elemento al final
-                slideshow.current.appendChild(primerElemento)
+      // eventListener
 
-                // remove evenListener
-
-                slideshow.current.removeEventListener('transitionend',transicion)
-            }
-
-            // eventListener
-    
-            slideshow.current.addEventListener('transitionend', transicion)
-            
-            
-        }
+      slideshow.current.addEventListener("transitionend", transicion);
     }
-    
-    const anterior = () => {
-        
-        if(slideshow.current.children.length > 0){
-            // ultimo elemento
-            const index = slideshow.current.children.length -1;
-            const ultimoElemento = slideshow.current.children[index];
+  };
 
-            slideshow.current.insertBefore(ultimoElemento, slideshow.current.firstChild)
+  const anterior = () => {
+    if (slideshow.current.children.length > 0) {
+      // ultimo elemento
+      const index = slideshow.current.children.length - 1;
+      const ultimoElemento = slideshow.current.children[index];
 
+      slideshow.current.insertBefore(
+        ultimoElemento,
+        slideshow.current.firstChild
+      );
 
-            slideshow.current.style.transition = 'none';
+      slideshow.current.style.transition = "none";
 
-            const tamañoSlide = slideshow.current.children[0].offsetWidth
+      const tamañoSlide = slideshow.current.children[0].offsetWidth;
 
-            slideshow.current.style.transform = `translateX(-${tamañoSlide}px)`;
+      slideshow.current.style.transform = `translateX(-${tamañoSlide}px)`;
 
-            setTimeout(() => {
-                slideshow.current.style.transition = '100ms ease-out all';
-                slideshow.current.style.transform = `translateX(0px)`
-            }, 30)
-            
-        }
+      setTimeout(() => {
+        slideshow.current.style.transition = "100ms ease-out all";
+        slideshow.current.style.transform = `translateX(0px)`;
+      }, 30);
     }
+  };
 
-    useEffect(() => {
-        intervaloSlideshow.current = setInterval(() => {
-            siguiente()
-        },5000)
+  useEffect(() => {
+    intervaloSlideshow.current = setInterval(() => {
+      siguiente();
+    }, 5000);
 
-        slideshow.current.addEventListener('mouseenter',()=> {
-            clearInterval(intervaloSlideshow.current)
-        })
+    slideshow.current.addEventListener("mouseenter", () => {
+      clearInterval(intervaloSlideshow.current);
+    });
 
-        slideshow.current.addEventListener('mouseleave',()=> {
-            intervaloSlideshow.current = setInterval(() => {
-            siguiente()
-            },5000)
-        })
-    },[])
-    
+    slideshow.current.addEventListener("mouseleave", () => {
+      intervaloSlideshow.current = setInterval(() => {
+        siguiente();
+      }, 5000);
+    });
+  }, []);
 
-    return (
-        <CtnSlider ref={slideshow}> 
-        
-            {
-                img.map(({img,id,link}) => (
-                <Slider key={id}>
-                    
-                    <div >
-                    <a href={link} target='_blank'>
-                        <img src={img} alt='' height={140} />
-                    </a>
-                    </div>
-            
+  return (
+    <div>
+      <CtnSlider ref={slideshow}>
+        {img.map(({ img, id, link }) => (
+          <Slider key={id}>
+            <div>
+              <a href={link} target="_blank">
+                <img src={img} alt="" height={140} />
+              </a>
+            </div>
 
-                    <div className='button'>
-                        <span><AiFillLeftCircle size={30} onClick={anterior}/> </span>
-                        <span><AiFillRightCircle size={30} onClick={siguiente}/> </span>
-                    </div>
-                    <h4>{type}</h4>
-                </Slider>
-                ))
-            }
-        
-        </CtnSlider>
-    )
-}
+            <div className="button">
+              <span>
+                <AiFillLeftCircle size={30} onClick={anterior} />{" "}
+              </span>
+              <span>
+                <AiFillRightCircle size={30} onClick={siguiente} />{" "}
+              </span>
+            </div>
+          </Slider>
+        ))}
+      </CtnSlider>
+      <Description>
+        <p>{type}</p>
+      </Description>
+    </div>
+  );
+};
 
-export default Slide
-
+export default Slide;
 
 const Slider = styled.div`
-   min-width: 100%;
-   overflow: hidden;
-   transition: .3s ease all;
-   z-index: 100;
-   /* max-height: 500px; */
-   
+  min-width: 100%;
+  overflow: hidden;
+  transition: 0.3s ease all;
+  z-index: 100;
+  /* max-height: 500px; */
 
-    img{
-        width: 800px;
-        height: 300px;
-        border-bottom: 2px solid #000;
-        object-fit: content;
-        @media screen and (max-width:900px){
-            width: 500px;
-            height: 200px
-        }
-        @media screen and (max-width:500px){
-            width: 360px;
-            height: 150px
-        }
-        @media screen and (max-width:360px){
-            width: 338px;
-            height: 130px;
-        }
+  img {
+    width: 800px;
+    height: 300px;
+    border-bottom: 2px solid #000;
+    object-fit: content;
+    @media screen and (max-width: 900px) {
+      width: 500px;
+      height: 200px;
     }
-   
-   .button{
-       display: flex;
-       justify-content: space-between;
-       position: relative;
-        top: -48px;
-       margin: 2px;
+    @media screen and (max-width: 500px) {
+      width: 360px;
+      height: 150px;
     }
-    
-    .button span{
-        color: #000;
-        cursor: pointer;
-        margin: 5px;
-        transition: 1s ease-out all;
-        &:hover{
-            color: #555;
-            transform: scale(1.4)
-        }
+    @media screen and (max-width: 360px) {
+      width: 338px;
+      height: 130px;
     }
+  }
 
-    h4{
-        margin-bottom: 10px;color: #000;
-        position: relative;
-        bottom:20px;
-        cursor: alias;
-    }
+  .button {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    top: -48px;
+    margin: 2px;
+  }
 
-`
+  .button span {
+    color: rgba(170, 30, 30);
+    cursor: pointer;
+    margin: 5px;
+    transition: 1s ease-out all;
+    &:hover {
+      color: #555;
+      transform: scale(1.4);
+    }
+  }
+`;
 
 const CtnSlider = styled.div`
- display: flex;
- flex-wrap: nowrap;
-`
-
-
-
+  display: flex;
+  flex-wrap: nowrap;
+`;
+const Description = styled.div`
+  cursor: alias;
+  p {
+    color: #000;
+    margin-bottom: 10px;
+    position: relative;
+    bottom: 15px;
+  }
+`;

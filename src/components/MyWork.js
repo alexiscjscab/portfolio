@@ -6,6 +6,13 @@ import {
 } from '@material-ui/core';
 import Slide from './imgProject/Slide';
 
+import imgA1 from './imgProject/alkemy/1.png';
+import imgA2 from './imgProject/alkemy/2.png';
+import imgA3 from './imgProject/alkemy/3.png';
+import imgA4 from './imgProject/alkemy/4.png';
+import imgA5 from './imgProject/alkemy/5.png';
+import imgA6 from './imgProject/alkemy/6.png';
+
 import img1 from './imgProject/dogs/1.png'
 import img2 from './imgProject/dogs/2.png'
 import img3 from './imgProject/dogs/3.png'
@@ -40,6 +47,41 @@ import imgP3 from './imgProject/poke/imgP3.png'
 import imgP4 from './imgProject/poke/imgP4.png'
 import imgP5 from './imgProject/poke/imgP5.png'
 import imgP6 from './imgProject/poke/imgP6.png'
+
+
+
+const imgA = [
+    {
+        img: imgA1,
+        id: 'imgA1',
+        link: 'https://pokedexreactalexiscjscab.netlify.app/'
+    },
+    {
+        img: imgA2,
+        id: 'imgA2',
+        link: 'https://github.com/alexiscjscab/alkemy-fullstack'
+    },
+    {
+        img: imgA3,
+        id: 'imgA3',
+        link: 'https://github.com/alexiscjscab/alkemy-fullstack'
+    },
+    {
+        img: imgA4,
+        id: 'imgA5',
+        link: 'https://github.com/alexiscjscab/alkemy-fullstack'
+    },
+    {
+        img: imgA5,
+        id: 'imgA5',
+        link: 'https://github.com/alexiscjscab/alkemy-fullstack'
+    },
+    {
+        img: imgA6,
+        id: 'imgA6',
+        link: 'https://github.com/alexiscjscab/alkemy-fullstack'
+    },
+]
 
 
 const imgP =[
@@ -212,12 +254,16 @@ const MyWork = ({ id, dark}) => {
                             <h3>Projects</h3>
                         </ScrollAnimation>                            
                         <div>
-                            <a href='https://github.com/tomasellis/henry-ecommerce' target='_black'> <h1>App Dogs </h1> </a>
-                            <Slide  img={imgDog} type={'Full Stack'}/>
+
+                            <a href='https://github.com/alexiscjscab/alkemy-fullstack' target='_black'> <h1>Challenge Alkemy </h1> </a>
+                            <Slide  img={imgA} type={'CHALLENGE REACT NODE'}/>
                             
 
-                            <a href='https://github.com/alexiscjscab/PI-Dogs-FT15a' target='_black'> <h1>Cute Clothes </h1> </a>
-                            <Slide  img={imgE} type={'Front End (E-Commerce)'}/>
+                            <a href='https://github.com/alexiscjscab/PI-Dogs-FT15a' target='_black'> <h1>App Dogs </h1> </a>
+                            <Slide  img={imgDog} type={'SPA FULL STACK'}/>
+                            
+                            <a href='https://github.com/tomasellis/henry-ecommerce' target='_black'> <h1>Cute Clothes </h1> </a>
+                            <Slide  img={imgE} type={'FRONT END (E-COMMERCE)'}/>
                             
                             <a href='https://github.com/alexiscjscab/rickandmorty' target='_black'> <h1>Rick And Morty </h1> </a>
                             <Slide img={imgR} type={'HTML/ CSS/ JAVASCRIPT'}/>
@@ -295,6 +341,7 @@ const Project = styled.div`
    a{
        text-decoration: none;
        color: #fff;
+       cursor:pointer;
        &:hover{
            color: #000
        }
