@@ -1,363 +1,136 @@
 import React from 'react';
 import styled from 'styled-components';
-import ScrollAnimation from 'react-animate-on-scroll'
-import {
-    makeStyles, 
-} from '@material-ui/core';
+import ScrollAnimation from 'react-animate-on-scroll';
+import { makeStyles } from '@material-ui/core';
 import Slide from './imgProject/Slide';
+import { imgA, imgDog, imgE, imgW, imgR, imgP } from './array/index';
 
-import imgA1 from './imgProject/alkemy/1.png';
-import imgA2 from './imgProject/alkemy/2.png';
-import imgA3 from './imgProject/alkemy/3.png';
-import imgA4 from './imgProject/alkemy/4.png';
-import imgA5 from './imgProject/alkemy/5.png';
-import imgA6 from './imgProject/alkemy/6.png';
+const MyWork = ({ id, dark }) => {
+  const classes = useStyles();
+  return (
+    <div className={`${classes.section} ${dark && classes.sectiondark}`}>
+      <div className={classes.sectionContent}>
+        <div className={classes.ctn}>
+          <Project id={id}>
+            <ScrollAnimation animateIn='wobble' initiallyVisible={true}>
+              <h3>Projects</h3>
+            </ScrollAnimation>
+            <div>
+              <a
+                href='https://github.com/alexiscjscab/ReactRickAndMorty'
+                target='_black'
+              >
+                <h1>Rick And Morty </h1>
+              </a>
+              <Slide img={imgR} type={'CHALLENGE REACT SASS'} description={'Back with Node Express and Axios consumes necessary data from the Rick And Morty API to send to the client. Front React Redux SASS Axios I request the back and receive JSON and also show the content and add functionalities such as filtering by gender, status, location, episodes and search by name '}/>
+              <a
+                href='https://github.com/alexiscjscab/alkemy-fullstack'
+                target='_black'
+              >
+                <h1>Challenge Alkemy </h1>
+              </a>
+              <Slide img={imgA} type={'CHALLENGE FULL STACK NODE REACT'} description={'Challenge (Income / expenses) to do the Acceleration in Alkemy as a full stack Node / React. Back Node Express Sequelize Postgres. Front React Redux Styled-Components '}/>
 
-import img1 from './imgProject/dogs/1.png'
-import img2 from './imgProject/dogs/2.png'
-import img3 from './imgProject/dogs/3.png'
-import img4 from './imgProject/dogs/4.png'
-import img5 from './imgProject/dogs/5.png'
-import img6 from './imgProject/dogs/6.png'
-import img7 from './imgProject/dogs/7.png'
+              <a
+                href='https://github.com/tomasellis/henry-ecommerce'
+                target='_black'
+              >
+                <h1>Cute Clothes </h1>
+              </a>
+              <Slide img={imgE} type={'FULL STACK E-COMMERCE TYPESCRIPT NODE REACT'} description={'Group Project of 6 people in Henry an E-Commerce made with Typescript. Back was with Node Express GraphQL. Front with React Redux MaterialUI Styled-Components. I worked as Front End, we used agile methodology such as SCRUM, having 30 min daily every day and once a week we presented the project to a Product Ower belonging to the Staff'}/>
+              
+              <a
+                href='https://github.com/alexiscjscab/PI-Dogs-FT15a'
+                target='_black'
+              >
+                <h1>App Dogs </h1>
+              </a>
+              <Slide img={imgDog} type={'SPA FULL STACK'} description={'Individual Project in Henry a SPA that consumes the back an API Dogs giving improvements such as filtering, ordering and search. The Front React Redux Styled-Components was made with Node Express Sequelize Postgres Axios.'}/>
 
-import imgE1 from './imgProject/ecommerce/1.png'
-import imgE2 from './imgProject/ecommerce/2.png'
-import imgE3 from './imgProject/ecommerce/3.png'
-import imgE4 from './imgProject/ecommerce/4.png'
-import imgE6 from './imgProject/ecommerce/6.png'
-import imgE7 from './imgProject/ecommerce/7.png'
+              <a
+                href='https://github.com/alexiscjscab/weatherReact'
+                target='_black'
+              >
+                <h1>Weather App </h1>
+              </a>
+              <Slide img={imgW} type={'REACT/ STYLED-COMPONENTS'} description={'Weather APP performed during the M2 Front End module in Henry. The APP consumes the Weather API was made with React Styled-Components Axios '} />
 
-
-import imgR1 from './imgProject/rick/1Rick.png'
-import imgR2 from './imgProject/rick/2Rick.png'
-import imgR3 from './imgProject/rick/3Rick.png'
-
-
-import imgW1 from './imgProject/clima/imgW1.png'
-import imgW2 from './imgProject/clima/imgW2.png'
-import imgW3 from './imgProject/clima/imgW3.png'
-import imgW4 from './imgProject/clima/imgW4.png'
-
-
-
-import imgP1 from './imgProject/poke/imgP1.png'
-import imgP2 from './imgProject/poke/imgP2.png'
-import imgP3 from './imgProject/poke/imgP3.png'
-import imgP4 from './imgProject/poke/imgP4.png'
-import imgP5 from './imgProject/poke/imgP5.png'
-import imgP6 from './imgProject/poke/imgP6.png'
-
-
-
-const imgA = [
-    {
-        img: imgA1,
-        id: 'imgA1',
-        link: 'https://pokedexreactalexiscjscab.netlify.app/'
-    },
-    {
-        img: imgA2,
-        id: 'imgA2',
-        link: 'https://github.com/alexiscjscab/alkemy-fullstack'
-    },
-    {
-        img: imgA3,
-        id: 'imgA3',
-        link: 'https://github.com/alexiscjscab/alkemy-fullstack'
-    },
-    {
-        img: imgA4,
-        id: 'imgA5',
-        link: 'https://github.com/alexiscjscab/alkemy-fullstack'
-    },
-    {
-        img: imgA5,
-        id: 'imgA5',
-        link: 'https://github.com/alexiscjscab/alkemy-fullstack'
-    },
-    {
-        img: imgA6,
-        id: 'imgA6',
-        link: 'https://github.com/alexiscjscab/alkemy-fullstack'
-    },
-]
-
-
-const imgP =[
-    {
-        img: imgP1,
-        id: 'imgP1',
-        link: 'https://pokedexreactalexiscjscab.netlify.app/'
-    },
-    {
-        img: imgP2,
-        id: 'imgP2',
-        link: 'https://pokedexreactalexiscjscab.netlify.app/'
-    },
-    {
-        img: imgP3,
-        id: 'imgP3',
-        link: 'https://pokedexreactalexiscjscab.netlify.app/'
-    },
-    {
-        img: imgP4,
-        id: 'imgP4',
-        link: 'https://pokedexreactalexiscjscab.netlify.app/'
-    },
-    {
-        img: imgP5,
-        id: 'imgP5',
-        link: 'https://pokedexreactalexiscjscab.netlify.app/'
-    },
-    {
-        img: imgP6,
-        id: 'imgP6',
-        link: 'https://pokedexreactalexiscjscab.netlify.app/'
-    },
-
-]
-
-
-
-const imgW = [
-    {
-        img: imgW1,
-        id: 'imgW1',
-        link: 'https://reactappweatheralexis.netlify.app/'
-    },
-    {
-        img: imgW2,
-        id: 'imgW2',
-        link: 'https://reactappweatheralexis.netlify.app/'
-    },
-    {
-        img: imgW3,
-        id: 'imgW3',
-        link: 'https://reactappweatheralexis.netlify.app/'
-    },
-    {
-        img: imgW4,
-        id: 'imgW4',
-        link: 'https://reactappweatheralexis.netlify.app/'
-    }
-]
-
-
-const imgR = [
-    {
-        img: imgR1,
-        id: 'imgR1',
-        link:'https://github.com/alexiscjscab/rickandmorty'
-    },
-    {
-        img: imgR2,
-        id: 'imgR2',
-        link:'https://github.com/alexiscjscab/rickandmorty'
-    },
-    {
-        img: imgR3,
-        id: 'imgR3',
-        link:'https://github.com/alexiscjscab/rickandmorty'
-    }
-]
-
-
-const imgE = [
-    {
-        img: imgE1,
-        id: 'img1',
-        link: 'https://github.com/tomasellis/henry-ecommerce'
-    },
-    {
-        img: imgE2,
-        id: 'img2',
-        link: 'https://github.com/tomasellis/henry-ecommerce'
-    },
-    {
-        img: imgE3,
-        id: 'img3',
-        link: 'https://github.com/tomasellis/henry-ecommerce'
-    },
-    {
-        img: imgE4,
-        id: 'img4',
-        link: 'https://github.com/tomasellis/henry-ecommerce'
-    },
-    
-    {
-        img: imgE6,
-        id: 'img6',
-        link: 'https://github.com/tomasellis/henry-ecommerce'
-    },
-    {
-        img: imgE7,
-        id: 'img7',
-        link: 'https://github.com/tomasellis/henry-ecommerce'
-    }
-]
-
-
-const imgDog = [
-    {
-        img: img1,
-        id: 'img1',
-        link: 'https://github.com/alexiscjscab/PI-Dogs-FT15a'
-    },
-    {
-        img: img2,
-        id: 'img2',
-        link: 'https://github.com/alexiscjscab/PI-Dogs-FT15a'
-    },
-    {
-        img: img3,
-        id: 'img3',
-        link: 'https://github.com/alexiscjscab/PI-Dogs-FT15a'
-    },
-    {
-        img: img4,
-        id: 'img4',
-        link: 'https://github.com/alexiscjscab/PI-Dogs-FT15a'
-    },
-    {
-        img: img5,
-        id: 'img5',
-        link: 'https://github.com/alexiscjscab/PI-Dogs-FT15a'
-    },
-    {
-        img: img6,
-        id: 'img6',
-        link: 'https://github.com/alexiscjscab/PI-Dogs-FT15a'
-    },
-    {
-        img: img7,
-        id: 'img7',
-        link: 'https://github.com/alexiscjscab/PI-Dogs-FT15a'
-    }
-
-]
-
-
-
-
-const MyWork = ({ id, dark}) => {
-    const classes = useStyles();
-    return (
-        <div className={`${classes.section} ${dark && classes.sectiondark}`}>
-            
-        <div className={classes.sectionContent}>
-        
-                <div className={classes.ctn}>
-                   <Project id={id}>
-                        <ScrollAnimation animateIn='wobble'
-                            initiallyVisible={true}>
-                            <h3>Projects</h3>
-                        </ScrollAnimation>                            
-                        <div>
-
-                            <a href='https://github.com/alexiscjscab/alkemy-fullstack' target='_black'> <h1>Challenge Alkemy </h1> </a>
-                            <Slide  img={imgA} type={'CHALLENGE REACT NODE'}/>
-                            
-
-                            <a href='https://github.com/alexiscjscab/PI-Dogs-FT15a' target='_black'> <h1>App Dogs </h1> </a>
-                            <Slide  img={imgDog} type={'SPA FULL STACK'}/>
-                            
-                            <a href='https://github.com/tomasellis/henry-ecommerce' target='_black'> <h1>Cute Clothes </h1> </a>
-                            <Slide  img={imgE} type={'FRONT END (E-COMMERCE)'}/>
-                            
-                            <a href='https://github.com/alexiscjscab/rickandmorty' target='_black'> <h1>Rick And Morty </h1> </a>
-                            <Slide img={imgR} type={'HTML/ CSS/ JAVASCRIPT'}/>
-
-                            <a href='https://github.com/alexiscjscab/weatherReact' target='_black'> <h1>Weather App </h1> </a>
-                            <Slide img={imgW} type={'REACT/ STYLED-COMPONENTS'}/>
-
-                            <a href='https://github.com/alexiscjscab/Pokedex-React' target='_black'> <h1>Pokedex </h1> </a>
-                            <Slide img={imgP} type={'REACT/ STYLED-COMPONENTS'}/>
-
-                            
-                            
-                        </div>
-                       
-                      
-                   </Project>
-
-                </div>
-                
+              <a
+                href='https://github.com/alexiscjscab/Pokedex-React'
+                target='_black'
+              >
+                <h1>Pokedex </h1>
+              </a>
+              <Slide img={imgP} type={'REACT/ STYLED-COMPONENTS'} description={'Pokedex consumes the pokemon API is made with React Styled-Components '}/>
             </div>
+          </Project>
         </div>
-    )
-}
+      </div>
+    </div>
+  );
+};
 
-export default MyWork
-
-
-
-
-
+export default MyWork;
 
 const useStyles = makeStyles((theme) => ({
-    section:{
-        
-        minHeight: "100vh",
-        backgroundColor: 'rgba(0,137,255,1)',
-        background: 'linear-gradient(90deg, rgba(0,137,255,1) 0%, #00bdd0 50%, rgba(0,137,255,1) 100%)',
-        
-    },
-    sectiondark:{
-        background: '#ddd',
-        color: '#fff'
-    },
-    sectionContent:{
-        display:'flex',
-        justifyContent: 'center',
-        flexDirection: 'column',
-    },
-    ctn:{
-        textAlign: 'center',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-    }
-}))
+  section: {
+    minHeight: '100vh',
+    backgroundColor: 'rgba(0,137,255,1)',
+    background:
+      'linear-gradient(90deg, rgba(0,137,255,1) 0%, #00bdd0 50%, rgba(0,137,255,1) 100%)',
+  },
+  sectiondark: {
+    background: '#ddd',
+    color: '#fff',
+  },
+  sectionContent: {
+    display: 'flex',
+    justifyContent: 'center',
+    flexDirection: 'column',
+  },
+  ctn: {
+    textAlign: 'center',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
+    flexDirection: 'column',
+  },
+}));
 
 const Project = styled.div`
-   width: 800px;
-   overflow: hidden;
-   height: 300px;
-   font-family: 'Josefin Sans', sans-serif;
-   color: #000;
-   height: 100%;
-   cursor: alias;
-   @media screen and (max-width:900px){
-        width: 480px;
+  width: 800px;
+  overflow: hidden;
+  height: 300px;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #000;
+  height: 100%;
+  cursor: alias;
+  @media screen and (max-width: 900px) {
+    width: 480px;
+  }
+  @media screen and (max-width: 500px) {
+    width: 360px;
+  }
+  @media screen and (max-width: 360px) {
+    width: 338px;
+  }
+  a {
+    text-decoration: none;
+    color: #fff;
+    cursor: pointer;
+    &:hover {
+      color: #000;
     }
-    @media screen and (max-width:500px){
-        width: 360px;
-    }
-    @media screen and (max-width:360px){
-        width: 338px;
-    }
-   a{
-       text-decoration: none;
-       color: #fff;
-       cursor:pointer;
-       &:hover{
-           color: #000
-       }
-   }
-   
-   
-   h3{
-       margin: 30px;
-       font-size: 40px;
-       border-bottom: 2px solid #000;  
-       display: inline-block; 
-       @media screen and (max-width:360px){
-        margin: 10px;
-        font-size: 34px;
-    }
-   }
+  }
 
-`
-
+  h3 {
+    margin: 30px;
+    font-size: 40px;
+    border-bottom: 2px solid #000;
+    display: inline-block;
+    @media screen and (max-width: 360px) {
+      margin: 10px;
+      font-size: 34px;
+    }
+  }
+`;
