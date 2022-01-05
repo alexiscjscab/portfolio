@@ -38,6 +38,10 @@ const skills = [
     img : 'https://img.icons8.com/color/2x/nodejs.png'
   },
   {
+    name: 'Express',
+    img: 'https://nashvillesoftwareschool.com/images/technologies/express.png'
+  },
+  {
     name: 'Postgres',
     img: 'https://img.icons8.com/color/2x/postgresql.png'
   },
@@ -56,7 +60,11 @@ const skills = [
   {
     name: 'Git',
     img: 'https://img.icons8.com/color/2x/git.png'
-  }
+  },
+  {
+    name: 'postman',
+    img : 'https://img.icons8.com/external-tal-revivo-shadow-tal-revivo/2x/external-postman-is-the-only-complete-api-development-environment-logo-shadow-tal-revivo.png'
+  },
 ];
 
 const Skills = ({ id, dark }) => {
@@ -127,17 +135,16 @@ const moverLeft = keyframes`
 `;
 
 const ListSkillsL = styled.div`
-  
-  
   img {
-    width: 60px;
-  height: 60px;
+    width: 45px;
+    height: 45px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
     animation-name: ${moverLeft};
     animation-duration: 6s;
     background: #333;
-    margin: 10px;
-    padding: 10px;
-    border-radius: 20px;
+    
     transition: 2;
     cursor: alias;
     animation-iteration-count: infinite;
@@ -149,15 +156,15 @@ const ListSkillsL = styled.div`
 const ListSkillsR = styled.div`
   
   img {
-    width: 60px;
-  height: 60px;
+    width: 45px;
+    height: 45px;
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
     z-index: 999;
     background: #333;
-    margin: 10px;
-    padding: 10px;
     animation-name: ${moverRight};
     animation-duration: 6s;
-    border-radius: 30px;
     cursor: alias;
     animation-iteration-count: infinite;
     animation-direction: alternate;
