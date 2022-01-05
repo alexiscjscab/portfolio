@@ -1,43 +1,76 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core';
-
 import styled from 'styled-components';
-
+import swal from 'sweetalert';
+import ScrollAnimation from 'react-animate-on-scroll';
 import { icons } from './About';
 
-import ScrollAnimation from 'react-animate-on-scroll';
-
 import emailjs from 'emailjs-com';
-import swal from 'sweetalert';
 
 const Contact = ({ id, dark }) => {
   const classes = useStyles();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
 
-  function sendEmail(e) {
+  async function  sendEmail (e) {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        'gmailPortafolio',
-        'template_alexis',
-        e.target,
-        'user_PzunwnbRH3TpjOLmVu2mH'
-      )
+    if (email === '' || message === '' || name === '') {
+      swal({
+        title: 'Error',
+        icon: 'error',
+        text: 'Please fill out all fields.',
+        button: 'ok',
+        timer: '3000',
+      });
+    } else {
+      // eslint-disable-next-line no-useless-escape
+      let validRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
+      if(email.match(validRegex)) {
+        await emailjs
+        .sendForm(
+          'gmailPortafolio',
+          'template_alexis',
+          e.target,
+          'user_PzunwnbRH3TpjOLmVu2mH'
+        )
 
-      .then((result) => {
+        .then((result) => {
+          swal({
+            title: 'Message Success👍',
+            icon: 'success',
+            button: 'ok',
+            timer: '3000',
+          });
+        })
+        .catch((err) => {
+          swal({
+            title: 'Error',
+            icon: 'error',
+            text: 'Please try again later.',
+            button: 'ok',
+            timer: '3000',
+          });
+        })
+        .finally(() => {
+          setTimeout(() => {
+            setName('');
+            setEmail('');
+            setMessage('');
+          },1500)
+        });
+      }else{
         swal({
-          title: 'Message Success👍',
-          icon: 'success',
+          title: 'Error',
+          icon: 'error',
+          text: 'Please enter a valid email.',
           button: 'ok',
           timer: '3000',
         });
-      })
-      .catch((err) => {
-        console.log(err);
-      })
-      .finally(() => {
-        e.target.reset();
-      });
+      }
+      
+    }
   }
 
   return (
@@ -48,21 +81,34 @@ const Contact = ({ id, dark }) => {
             <Form id={id} onSubmit={sendEmail}>
               <div className='input'>
                 <label>Name</label>
-                <input type='text' name='name' required maxLength={50} />
+                <input
+                  type='text'
+                  name='name'
+                  maxLength={50}
+                  onChange={(e) => setName(e.target.value)}
+                  value={name}
+                />
               </div>
 
               <div className='input email'>
                 <label>Email</label>
-                <input type='text' name='email' required maxLength={70} />
+                <input
+                  type='text'
+                  name='email'
+                  maxLength={200}
+                  onChange={(e) => setEmail(e.target.value)}
+                  value={email}
+                />
               </div>
 
               <div className='inputTextarea'>
                 <label>Message</label>
                 <textarea
-                  required
                   name='message'
                   placeholder=' Message...'
                   maxLength={800}
+                  onChange={(e) => setMessage(e.target.value)}
+                  value={message}
                 />
               </div>
 
