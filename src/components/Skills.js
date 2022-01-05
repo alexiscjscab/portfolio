@@ -7,40 +7,56 @@ import ScrollAnimation from 'react-animate-on-scroll';
 const skills = [
   {
     name: 'HTML',
+    img: 'https://img.icons8.com/color/2x/html-5.png',
   },
   {
     name: 'CSS',
+    img: 'https://img.icons8.com/color/2x/css3.png'
   },
   {
     name: 'SASS',
+    img: 'https://img.icons8.com/color/2x/sass.png'
   },
   {
     name: 'Javascript',
+    img: 'https://img.icons8.com/color/48/000000/javascript--v2.png'
   },
   {
     name: 'TypeScript',
+    img: 'https://img.icons8.com/color/2x/typescript.png'
   },
   {
     name: 'React',
+    img: 'https://img.icons8.com/officel/344/react.png'
   },
   {
     name: 'Redux',
+    img: 'https://img.icons8.com/color/2x/redux.png'
   },
   {
     name: 'Node',
-  },
-  {
-    name: 'Express',
+    img : 'https://img.icons8.com/color/2x/nodejs.png'
   },
   {
     name: 'Postgres',
+    img: 'https://img.icons8.com/color/2x/postgresql.png'
   },
   {
     name: 'MySQL',
+    img: 'https://img.icons8.com/fluency/2x/mysql-logo.png'
   },
   {
     name: 'Sequelize',
+    img: 'https://khalilstemmler.com/img/blog/sequelize/banner.png'
   },
+  {
+    name: 'GraphQL',
+    img: 'https://img.icons8.com/color/2x/graphql.png'
+  },
+  {
+    name: 'Git',
+    img: 'https://img.icons8.com/color/2x/git.png'
+  }
 ];
 
 const Skills = ({ id, dark }) => {
@@ -53,14 +69,14 @@ const Skills = ({ id, dark }) => {
             <h2> Skills </h2>
           </ScrollAnimation>
 
-          {skills.map(({ name }, index) =>
+          {skills.map(({ name, img }, index) =>
             index % 2 === 0 ? (
               <ListSkillsL key={name}>
-                <h3>{name}</h3>
+                <img src={img} alt={name}/>
               </ListSkillsL>
             ) : (
               <ListSkillsR key={name}>
-                <h3>{name}</h3>
+                <img src={img} alt={name}/>
               </ListSkillsR>
             )
           )}
@@ -91,55 +107,61 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const moverRight = keyframes`
-  from{margin-left: 50%;background: transparent;color:#2082d8}
-  to{margin-left: 0%; background: #2082d8 ;color: black}
+  from{
+    margin-left: 50%;
+  }
+  to{
+    margin-left: 0%;
+    transform: rotate(360deg);
+  }
 `;
 
 const moverLeft = keyframes`
-  from{margin-right: 50%; background: transparent;color: black}
-  to{margin-right: 0%; background: black;color:#2082d8}
+  from{
+    margin-right: 50%;
+  }
+  to{
+    margin-right: 0%;
+    transform: rotate(360deg);
+  }
 `;
 
 const ListSkillsL = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Josefin Sans', sans-serif;
   
-  h3 {
+  
+  img {
+    width: 60px;
+  height: 60px;
     animation-name: ${moverLeft};
     animation-duration: 6s;
-    background: black;
+    background: #333;
     margin: 10px;
-    font-size: 1.2rem;
     padding: 10px;
     border-radius: 20px;
     transition: 2;
     cursor: alias;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    box-shadow: 10px 6px 0 rgba(130, 130, 130, 0.666);
+    box-shadow: 8px -6px 0 #2082d8;
   }
 `;
 
 const ListSkillsR = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: 'Josefin Sans', sans-serif;
-  h3 {
+  
+  img {
+    width: 60px;
+  height: 60px;
     z-index: 999;
-    background: white;
+    background: #333;
     margin: 10px;
-    font-size: 1.2rem;
     padding: 10px;
     animation-name: ${moverRight};
     animation-duration: 6s;
-    border-radius: 20px;
+    border-radius: 30px;
     cursor: alias;
     animation-iteration-count: infinite;
     animation-direction: alternate;
-    box-shadow: 10px 6px 0 rgba(130, 130, 130, 0.666);
+    box-shadow: -8px -6px 0 #2082d8;
   }
 `;
 
