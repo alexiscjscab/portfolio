@@ -183,6 +183,7 @@ const Description = styled.div`
   p {
     color: #000;
     position: relative;
+    font-size: 20px;
   }
   h4 {
     margin-bottom: 5px;
