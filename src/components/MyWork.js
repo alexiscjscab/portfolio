@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { makeStyles } from '@material-ui/core';
 import Slide from './imgProject/Slide';
-import { imgA, imgDog, imgE, imgW, imgR, imgP } from './array/index';
+import { imgA, imgDog, imgE, imgW, imgR, imgP, imgOng } from './array/index';
 
 const MyWork = ({ id, dark }) => {
   const classes = useStyles();
@@ -17,19 +17,44 @@ const MyWork = ({ id, dark }) => {
             </ScrollAnimation>
             <div>
               <a
+                href='https://github.com/alkemyTech/OT102-Client'
+                target='_black'
+              >
+                <h1>ONG Somos Mas (Alkemy) </h1>
+              </a>
+              <Slide
+                img={imgOng}
+                type={'FULL STACK NODE / REACT'}
+                description={
+                  'Group project between 6 people for the acceleration "JOB READY" of full stack node react in ALKEMY. Using good practices, GITFLOW as a workflow and SCRUM as an agile methodology. The technologies used were Node Express Sequelize MySQL React Redux ChakraUI JWT LocalStorage Formik, testing like Mocha, Chai and other technologies'
+                }
+              />
+              <a
                 href='https://github.com/alexiscjscab/ReactRickAndMorty'
                 target='_black'
               >
                 <h1>Rick And Morty </h1>
               </a>
-              <Slide img={imgR} type={'CHALLENGE REACT SASS'} description={'Back with Node Express and Axios consumes necessary data from the Rick And Morty API to send to the client. Front React Redux SASS Axios I request the back and receive JSON and also show the content and add functionalities such as filtering by gender, status, location, episodes and search by name '}/>
+              <Slide
+                img={imgR}
+                type={'CHALLENGE REACT SASS'}
+                description={
+                  'Back with Node Express and Axios consumes necessary data from the Rick And Morty API to send to the client. Front React Redux SASS Axios I request the back and receive JSON and also show the content and add functionalities such as filtering by gender, status, location, episodes and search by name '
+                }
+              />
               <a
                 href='https://github.com/alexiscjscab/alkemy-fullstack'
                 target='_black'
               >
                 <h1>Challenge Alkemy </h1>
               </a>
-              <Slide img={imgA} type={'CHALLENGE FULL STACK NODE REACT'} description={'Challenge (Income / expenses) to do the Acceleration in Alkemy as a full stack Node / React. Back Node Express Sequelize Postgres. Front React Redux Styled-Components '}/>
+              <Slide
+                img={imgA}
+                type={'CHALLENGE FULL STACK NODE REACT'}
+                description={
+                  'Challenge (Income / expenses) to do the Acceleration in Alkemy as a full stack Node / React. Back Node Express Sequelize Postgres. Front React Redux Styled-Components '
+                }
+              />
 
               <a
                 href='https://github.com/tomasellis/henry-ecommerce'
@@ -37,15 +62,27 @@ const MyWork = ({ id, dark }) => {
               >
                 <h1>Cute Clothes </h1>
               </a>
-              <Slide img={imgE} type={'FULL STACK E-COMMERCE TYPESCRIPT NODE REACT'} description={'Group Project of 6 people in Henry an E-Commerce made with Typescript. Back was with Node Express GraphQL. Front with React Redux MaterialUI Styled-Components. I worked as Front End, we used agile methodology such as SCRUM, having 30 min daily every day and once a week we presented the project to a Product Ower belonging to the Staff'}/>
-              
+              <Slide
+                img={imgE}
+                type={'FULL STACK E-COMMERCE TYPESCRIPT NODE REACT'}
+                description={
+                  'Group Project of 6 people in Henry an E-Commerce made with Typescript. Back was with Node Express GraphQL. Front with React Redux MaterialUI Styled-Components. I worked as Front End, we used agile methodology such as SCRUM, having 30 min daily every day and once a week we presented the project to a Product Ower belonging to the Staff'
+                }
+              />
+
               <a
                 href='https://github.com/alexiscjscab/PI-Dogs-FT15a'
                 target='_black'
               >
                 <h1>App Dogs </h1>
               </a>
-              <Slide img={imgDog} type={'SPA FULL STACK'} description={'Individual Project in Henry a SPA that consumes the back an API Dogs giving improvements such as filtering, ordering and search. The Front React Redux Styled-Components was made with Node Express Sequelize Postgres Axios.'}/>
+              <Slide
+                img={imgDog}
+                type={'SPA FULL STACK'}
+                description={
+                  'Individual Project in Henry a SPA that consumes the back an API Dogs giving improvements such as filtering, ordering and search. The Front React Redux Styled-Components was made with Node Express Sequelize Postgres Axios.'
+                }
+              />
 
               <a
                 href='https://github.com/alexiscjscab/weatherReact'
@@ -53,7 +90,13 @@ const MyWork = ({ id, dark }) => {
               >
                 <h1>Weather App </h1>
               </a>
-              <Slide img={imgW} type={'REACT/ STYLED-COMPONENTS'} description={'Weather APP performed during the M2 Front End module in Henry. The APP consumes the Weather API was made with React Styled-Components Axios '} />
+              <Slide
+                img={imgW}
+                type={'REACT/ STYLED-COMPONENTS'}
+                description={
+                  'Weather APP performed during the M2 Front End module in Henry. The APP consumes the Weather API was made with React Styled-Components Axios '
+                }
+              />
 
               <a
                 href='https://github.com/alexiscjscab/Pokedex-React'
@@ -61,7 +104,13 @@ const MyWork = ({ id, dark }) => {
               >
                 <h1>Pokedex </h1>
               </a>
-              <Slide img={imgP} type={'REACT/ STYLED-COMPONENTS'} description={'Pokedex consumes the pokemon API is made with React Styled-Components '}/>
+              <Slide
+                img={imgP}
+                type={'REACT/ STYLED-COMPONENTS'}
+                description={
+                  'Pokedex consumes the pokemon API is made with React Styled-Components '
+                }
+              />
             </div>
           </Project>
         </div>

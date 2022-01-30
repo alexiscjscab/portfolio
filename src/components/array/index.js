@@ -39,6 +39,18 @@ import imgP4 from '../imgProject/poke/imgP4.png';
 import imgP5 from '../imgProject/poke/imgP5.png';
 import imgP6 from '../imgProject/poke/imgP6.png';
 
+
+import imgO1 from '../imgProject/ong/1alkemy.png';
+import imgO2 from '../imgProject/ong/2alkemy.png';
+import imgO3 from '../imgProject/ong/3alkemy.png';
+import imgO4 from '../imgProject/ong/4alkemy.png';
+import imgO5 from '../imgProject/ong/5alkemy.png';
+import imgO6 from '../imgProject/ong/6alkemy.png';
+import imgO7 from '../imgProject/ong/7alkemy.png';
+import imgO8 from '../imgProject/ong/8alkemy.png';
+import imgO9 from '../imgProject/ong/9alkemy.png';
+import imgO10 from '../imgProject/ong/10alkemy.png';
+
 export const imgA = [
   {
     img: imgA1,
@@ -205,3 +217,45 @@ export const imgDog = [
   },
 ];
 
+export const imgOng = [
+  {
+    img: imgO1,
+    link: 'https://github.com/alkemyTech/OT102-Client',
+  },
+  {
+    img: imgO2,
+    link: 'https://github.com/alkemyTech/OT102-Client',
+  },
+  {
+    img: imgO3,
+    link: 'https://github.com/alkemyTech/OT102-Client',
+  },
+  {
+    img: imgO4,
+    link: 'https://github.com/alkemyTech/OT102-Client',
+  },
+  {
+    img: imgO5,
+    link: 'https://github.com/alkemyTech/OT102-Client',
+  },
+  {
+    img: imgO6,
+    link: 'https://github.com/alkemyTech/OT102-Client',
+  },
+  {
+    img: imgO7,
+    link: 'https://github.com/alkemyTech/OT102-Client',
+  },
+  {
+    img: imgO8,
+    link: 'https://github.com/alkemyTech/OT102-Client',
+  },
+  {
+    img: imgO9,
+    link: 'https://github.com/alkemyTech/OT102-Client',
+  },
+  {
+    img: imgO10,
+    link: 'https://github.com/alkemyTech/OT102-Client',
+  }
+]
