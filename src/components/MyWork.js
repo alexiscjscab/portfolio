@@ -153,7 +153,7 @@ const Project = styled.div`
   font-family: 'Josefin Sans', sans-serif;
   color: #000;
   height: 100%;
-  cursor: alias;
+  cursor: default;
   @media screen and (max-width: 900px) {
     width: 480px;
   }

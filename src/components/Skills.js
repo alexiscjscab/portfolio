@@ -146,10 +146,11 @@ const ListSkillsL = styled.div`
     background: #333;
     
     transition: 2;
-    cursor: alias;
+    cursor: default;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     box-shadow: 8px -6px 0 #2082d8;
+
   }
 `;
 
@@ -165,7 +166,7 @@ const ListSkillsR = styled.div`
     background: #333;
     animation-name: ${moverRight};
     animation-duration: 6s;
-    cursor: alias;
+    cursor: default;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     box-shadow: -8px -6px 0 #2082d8;
@@ -180,6 +181,6 @@ const Ctn = styled.div`
     font-size: 2.6rem;
     margin-bottom: 30px;
     border-bottom: 2px solid #2082d8;
-    cursor: alias;
+    cursor: default;
   }
 `;
