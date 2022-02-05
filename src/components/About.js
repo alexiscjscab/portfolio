@@ -37,7 +37,7 @@ const About = ({ id, dark }) => {
   return (
     <div className={`${classes.section} ${dark && classes.sectiondark}`}>
       <div className={classes.sectionContent} id={id}>
-        <ScrollAnimation duration={2} animateIn='bounceInRight'>
+        <ScrollAnimation animateIn='bounceInRight' animateOut='fadeOutLeft'>
           <Ctn>
             <div className='imagen'>
               <img src={img} alt='' />
@@ -45,33 +45,34 @@ const About = ({ id, dark }) => {
 
             <div className='content'>
               <TypeWriterEffect
-                text="Hi, I'm Alexis Beas"
+                text="Alexis Beas"
                 textStyle={{
                   fontSize: '3rem',
                   color: 'white',
                   margin: '5px',
                   fontFamily: "'Lobster', cursive",
                   textShadow: '2px 3px #000',
+                  textAlign: 'center',
                 }}
-                startDelay={110}
+                startDelay={100}
                 cursorColor='white'
-                typeSpeed={170}
+                typeSpeed={180}
                 hideCursorAfterText={true}
               />
               <TypeWriterEffect
                 textStyle={{
                   fontSize: '2.5rem',
                   color: 'white',
-                  marginTop: '10px',
                   margin: '5px',
                   fontFamily: "'Lobster', cursive",
                   textShadow: '2px 3px #000',
                   marginBottom: '20px',
+                  textAlign: 'center',
                 }}
                 startDelay={350}
                 cursorColor='white'
                 typeSpeed={180}
-                multiText={['Front End', 'Back End', 'Full Stack Developer']}
+                multiText={['Front End', 'Back End', 'Full Stack :)']}
                 multiTextDelay={1000}
                 hideCursorAfterText={true}
               />
@@ -87,15 +88,10 @@ const About = ({ id, dark }) => {
           </Ctn>
         </ScrollAnimation>
 
-        <ScrollAnimation animateIn='flipInY'>
+        <ScrollAnimation animateIn='flipInY' animateOut='fadeOutLeft'>
           <Description>
             <h2>
-              I am 23 years old, I am from Cordoba Argentina 🇦🇷, I met web
-              programming at the beginning of 2021 and I decided to do Henry
-              bootcamp (+ 800hs) where I discovered my passion for code 👨‍💻. I am
-              someone creative, curious and always eager to learn new
-              technologies. My hobbies are Soccer ⚽, Basketball 🏀, Video Games
-              🎮, sharing with Friends 🍻, Rock N' Roll 🤘 and Good Music 🎧
+            I'm 23 years old, I'm from Córdoba Argentina 🇦🇷, I learned about web programming at the beginning of 2021 and decided to do the Henry bootcamp (+800hs) where I discovered my passion for code 👨‍💻. After graduating, I accelerated in Alkemy as a Full Stack Node/React and was able to reinforce my skills as a programmer and teamwork with an agile methodology. I am a creative person, curious and always eager to learn something new. My hobbies are Football ⚽, Basketball 🏀, Video Games 🎮, Sharing with Friends 🍻, Rock N' Roll 🤘 and Good Music 🎧
             </h2>
           </Description>
         </ScrollAnimation>
@@ -189,17 +185,21 @@ const Ctn = styled.div`
 `;
 
 const Cv = styled.div`
-  margin-top: 10px;
+  margin-top: 15px;
   a {
     text-decoration: none;
     color: #000;
     font-family: 'Lobster', cursive;
     font-size: 2.2rem;
     text-shadow: 2px 3px #fff;
+    background: rgba(255,255,255,0.5);
+    border-radius: 10px;
+    padding: 10px;
+    transition: 0.3s ease-in-out;
     &:hover {
       color: #fff;
       text-shadow: 2px 3px #000;
-      border-bottom: 2px solid #000;
+      background: rgba(0,0,0,0.5);
     }
   }
 `;

@@ -125,13 +125,13 @@ const useStyles = makeStyles((theme) => ({
     left: 0,
     right: 0,
     color: '#fff',
-    height: '70px',
+    height: '60px',
     fontFamily: "'Josefin Sans', sans-serif",
   },
   toolbar: {
     display: 'flex',
     justifyContent: 'center',
-    alignItems: 'flex-end',
+    alignItems: 'center',
   },
   menu: {
     [theme.breakpoints.down('sm')]: {
@@ -148,8 +148,8 @@ const useStyles = makeStyles((theme) => ({
       }),
       '&:hover': {
         cursor: 'pointer',
-        color: '#00bdd0',
-        borderBottom: '3px solid #00bdd0',
+        color: '#2082d8',
+        borderBottom: '3px solid #2082d8',
       },
     },
   },
@@ -157,14 +157,14 @@ const useStyles = makeStyles((theme) => ({
     display: 'none',
     [theme.breakpoints.down('sm')]: {
       display: 'block',
-      color: '#00bdd0',
+      color: '#2082d8',
       position: 'absolute',
       top: 0,
       right: 12,
     },
   },
   drawer: {
-    background: '#00bdd0',
+    background: '#2082d8',
     height: '130%',
     fontFamily: "'Josefin Sans', sans-serif",
   },

@@ -13,7 +13,7 @@ const Contact = ({ id, dark }) => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
 
-  async function  sendEmail (e) {
+  async function sendEmail(e) {
     e.preventDefault();
 
     if (email === '' || message === '' || name === '') {
@@ -26,41 +26,41 @@ const Contact = ({ id, dark }) => {
       });
     } else {
       // eslint-disable-next-line no-useless-escape
-      let validRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g
-      if(email.match(validRegex)) {
+      let validRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+      if (email.match(validRegex)) {
         await emailjs
-        .sendForm(
-          'gmailPortafolio',
-          'template_alexis',
-          e.target,
-          'user_PzunwnbRH3TpjOLmVu2mH'
-        )
+          .sendForm(
+            'gmailPortafolio',
+            'template_alexis',
+            e.target,
+            'user_PzunwnbRH3TpjOLmVu2mH'
+          )
 
-        .then((result) => {
-          swal({
-            title: 'Message Success👍',
-            icon: 'success',
-            button: 'ok',
-            timer: '3000',
+          .then((result) => {
+            swal({
+              title: 'Message Success👍',
+              icon: 'success',
+              button: 'ok',
+              timer: '3000',
+            });
+          })
+          .catch((err) => {
+            swal({
+              title: 'Error',
+              icon: 'error',
+              text: 'Please try again later.',
+              button: 'ok',
+              timer: '3000',
+            });
+          })
+          .finally(() => {
+            setTimeout(() => {
+              setName('');
+              setEmail('');
+              setMessage('');
+            }, 1500);
           });
-        })
-        .catch((err) => {
-          swal({
-            title: 'Error',
-            icon: 'error',
-            text: 'Please try again later.',
-            button: 'ok',
-            timer: '3000',
-          });
-        })
-        .finally(() => {
-          setTimeout(() => {
-            setName('');
-            setEmail('');
-            setMessage('');
-          },1500)
-        });
-      }else{
+      } else {
         swal({
           title: 'Error',
           icon: 'error',
@@ -69,16 +69,18 @@ const Contact = ({ id, dark }) => {
           timer: '3000',
         });
       }
-      
     }
   }
 
   return (
     <div className={`${classes.section} ${dark && classes.sectiondark}`}>
       <div className={classes.sectionContent}>
-        <ScrollAnimation animateIn='bounceInLeft'>
-          <div className={classes.ctn}>
-            <Form id={id} onSubmit={sendEmail}>
+        <div className={classes.ctn}>
+          <Form onSubmit={sendEmail}>
+            <ScrollAnimation animateIn='wobble' initiallyVisible={true}>
+              <h3 id={id}>Contact</h3>
+            </ScrollAnimation>
+            <ScrollAnimation  animateIn='bounceInLeft' animateOut='fadeOutRight'>
               <div className='input'>
                 <label>Name</label>
                 <input
@@ -115,10 +117,13 @@ const Contact = ({ id, dark }) => {
               <div className='send'>
                 <input type='submit' value='SEND' />
               </div>
-            </Form>
-          </div>
+            </ScrollAnimation>
+          </Form>
+        </div>
 
-          <Social>
+        <Social>
+          <h3>My social networks</h3>
+          <div>
             {icons.map(({ icon, text, link }, index) => (
               // eslint-disable-next-line react/jsx-no-target-blank
               <a href={link} target='_blank' rel={text} key={index}>
@@ -126,8 +131,8 @@ const Contact = ({ id, dark }) => {
                 <span> {text}</span>
               </a>
             ))}
-          </Social>
-        </ScrollAnimation>
+          </div>
+        </Social>
       </div>
     </div>
   );
@@ -166,6 +171,7 @@ const Form = styled.form`
   flex-direction: column;
   width: 400px;
   margin: 30px auto;
+  text-align: center;
   @media screen and (max-width: 380px) {
     width: 350px;
   }
@@ -187,7 +193,7 @@ const Form = styled.form`
     padding: 6px;
     background: transparent;
     border: 3px solid rgba(0, 0, 0, 0.3);
-    box-shadow: 10px 6px 0 #00bdd0;
+    box-shadow: 10px 6px 0 #2082d8;
     color: #ffffff;
     border-radius: 50px;
     color: #000;
@@ -240,11 +246,11 @@ const Form = styled.form`
     padding: 9px;
     color: #000;
     border-radius: 30px;
-    box-shadow: 15px 12px 0 #00bdd0;
+    box-shadow: 15px 12px 0 #2082d8;
     font-family: 'Josefin Sans', sans-serif;
     @media screen and (max-width: 380px) {
       width: 260px;
-      box-shadow: 13px 9px 0 #00bdd0;
+      box-shadow: 13px 9px 0 #2082d8;
     }
   }
   .inputTextarea textarea::placeholder {
@@ -268,7 +274,7 @@ const Form = styled.form`
     background: transparent;
     font-family: 'Josefin Sans', sans-serif;
     border: 3px solid rgba(0, 0, 0, 0.3);
-    box-shadow: 8px 5px 0 #00bdd0;
+    box-shadow: 8px 5px 0 #2082d8;
     color: #ffffff;
     border-radius: 50px;
     color: #000;
@@ -276,7 +282,7 @@ const Form = styled.form`
     cursor: pointer;
     &:hover {
       color: #fff;
-      background: #00bdd0;
+      background: #2082d8;
       box-shadow: 8px 5px 0 rgba(10, 10, 10, 0.5);
     }
   }
@@ -288,6 +294,18 @@ const Form = styled.form`
     font-weight: 500;
     margin-bottom: 10%;
   }
+
+  h3 {
+    margin: 30px;
+    font-size: 40px;
+    border-bottom: 2px solid #2082d8;
+    display: inline-block;
+    text-align: center;
+    @media screen and (max-width: 360px) {
+      margin: 10px;
+      font-size: 34px;
+    }
+  }
 `;
 
 const Social = styled.div`
@@ -296,9 +314,10 @@ const Social = styled.div`
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   font-family: 'Josefin Sans', sans-serif;
   text-align: center;
-
+  width: 100%;
   a {
     text-decoration: none;
     color: #000;
@@ -306,8 +325,14 @@ const Social = styled.div`
     margin: 5px;
   }
 
+  h3{
+    margin: 10px 0px;
+    color: #000;
+    font-size: 22px;
+    cursor: default;
+  }
   a:hover {
-    color: #00bdd0;
+    color: #2082d8;
   }
 
   .icon {

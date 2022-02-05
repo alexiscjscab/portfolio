@@ -135,7 +135,7 @@ const Slider = styled.div`
   img {
     width: 800px;
     height: 300px;
-    border-bottom: 2px solid #000;
+    border-radius: 10px;    
     object-fit: content;
     @media screen and (max-width: 900px) {
       width: 500px;
