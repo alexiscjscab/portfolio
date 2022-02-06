@@ -78,7 +78,7 @@ const Contact = ({ id, dark }) => {
       <div className={classes.sectionContent}>
         <div className={classes.ctn}>
           <Form onSubmit={sendEmail}>
-            <ScrollAnimation animateIn='wobble' initiallyVisible={true}>
+            <ScrollAnimation animateIn='bounce'>
               <h3 id={id}>Contact</h3>
             </ScrollAnimation>
             <ScrollAnimation animateIn='bounceInLeft' animateOut='fadeOutRight'>
