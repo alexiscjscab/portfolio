@@ -4,8 +4,9 @@ import styled from 'styled-components';
 import swal from 'sweetalert';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { icons } from './About';
-
 import emailjs from 'emailjs-com';
+import { BiUpArrowCircle } from 'react-icons/bi';
+import { Link } from 'react-scroll';
 
 const Contact = ({ id, dark }) => {
   const classes = useStyles();
@@ -80,7 +81,7 @@ const Contact = ({ id, dark }) => {
             <ScrollAnimation animateIn='wobble' initiallyVisible={true}>
               <h3 id={id}>Contact</h3>
             </ScrollAnimation>
-            <ScrollAnimation  animateIn='bounceInLeft' animateOut='fadeOutRight'>
+            <ScrollAnimation animateIn='bounceInLeft' animateOut='fadeOutRight'>
               <div className='input'>
                 <label>Name</label>
                 <input
@@ -121,14 +122,30 @@ const Contact = ({ id, dark }) => {
           </Form>
         </div>
 
+        <ArrowUp>
+          <Link
+            to={'about'}
+            spy={true}
+            smooth={true}
+            duration={500}
+            offset={-70}
+          >
+            <span>
+              <BiUpArrowCircle size={75} />
+            </span>
+          </Link>
+        </ArrowUp>
+
         <Social>
-          <h3>My social networks</h3>
-          <div>
+          <h3>Alexis Beas developer </h3>
+          <div className='social-icons'>
             {icons.map(({ icon, text, link }, index) => (
               // eslint-disable-next-line react/jsx-no-target-blank
               <a href={link} target='_blank' rel={text} key={index}>
-                <span className='icon'>{icon}</span>
-                <span> {text}</span>
+                <div className='icon'>
+                  <p>{icon}</p>
+                  <span> {text} </span>
+                </div>
               </a>
             ))}
           </div>
@@ -146,6 +163,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'rgba(0,137,255,1)',
     background:
       'linear-gradient(90deg, rgba(0,137,255,1) 0%, #00bdd0 50%, rgba(0,137,255,1) 100%)',
+    position: 'relative',
   },
   sectiondark: {
     color: '#2082d8',
@@ -309,34 +327,57 @@ const Form = styled.form`
 `;
 
 const Social = styled.div`
-  /* position:absolute; bottom:0; */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
+  position: absolute;
+  bottom: 0;
   font-family: 'Josefin Sans', sans-serif;
   text-align: center;
-  width: 100%;
-  a {
-    text-decoration: none;
-    color: #000;
-    font-size: 22px;
-    margin: 5px;
-  }
-
-  h3{
+  background: #000;
+  color: #fff;
+  padding: 5px;
+  min-width: 100vw;
+  margin: 0 auto;
+  h3 {
     margin: 10px 0px;
-    color: #000;
-    font-size: 22px;
+    font-size: 20px;
     cursor: default;
   }
-  a:hover {
-    color: #2082d8;
-  }
+  .social-icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    text-align: center;
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 16px;
+      margin: 0 5px;
 
-  .icon {
-    position: relative;
-    top: 5px;
+      &:hover {
+        color: #2082d8;
+      }
+    }
+
+    .icon {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      span {
+        font-size: 18px;
+        margin: 0 5px;
+      }
+    }
+  }
+`;
+
+const ArrowUp = styled.div`
+  position: sticky;
+  bottom: 0;
+  padding: 10px;
+  z-index: 9;
+  text-align: right;
+  color: #2082d8;
+  span {
+    cursor: pointer;
   }
 `;
