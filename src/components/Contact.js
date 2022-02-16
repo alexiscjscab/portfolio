@@ -168,7 +168,8 @@ const useStyles = makeStyles((theme) => ({
   sectiondark: {
     minHeight: '100vh',
     backgroundColor: 'rgba(0,137,255,1)',
-    background: 'url(https://www.knoxalliance.store/wp-content/uploads/2017/05/light-color-background-images-for-website-top-hd-images-for-free-light-color-background-images-for-website-1-1024x768.jpg) no-repeat center center fixed',
+    background:
+      'url(https://images.pexels.com/photos/37728/pexels-photo-37728.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) no-repeat center center fixed',
     backgroundSize: 'cover',
     color: '#000',
   },
@@ -374,10 +375,9 @@ const Social = styled.div`
 `;
 
 const ArrowUp = styled.div`
-  position: sticky;
   bottom: 0;
-  padding: 10px;
-  z-index: 9;
+  z-index: 1;
+  position: sticky;
   text-align: right;
   color: #2082d8;
   span {

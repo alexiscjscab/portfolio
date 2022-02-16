@@ -102,6 +102,7 @@ const About = ({ id, dark }) => {
               <div className='hobbies'>
                 <p>Football ⚽</p>
                 <p>Basketball 🏀</p>
+                <p>Videogames </p>
                 <p>Rock And Roll 🤘🏽</p>
                 <p>Good Music 🎷</p>
               </div>
@@ -119,7 +120,7 @@ const useStyles = makeStyles((theme) => ({
   section: {
     minHeight: '100vh',
     backgroundColor: 'rgba(0,137,255,1)',
-    background: 'url(https://wallpapercave.com/wp/wp4312251.gif) no-repeat center center fixed',
+    background: 'url(https://images.pexels.com/photos/669996/pexels-photo-669996.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) no-repeat center center fixed',
     backgroundSize: 'cover',
     color: '#fff',
   },
@@ -172,6 +173,7 @@ const Description = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    flex-wrap: wrap;
     font-size: 1.8rem;
     color: #000;
     margin: 2px;

@@ -176,10 +176,9 @@ const CtnSlider = styled.div`
   flex-wrap: nowrap;
 `;
 const Description = styled.div`
-  background: rgba(240, 240, 240, 0.2);
   padding: 10px;
   margin-bottom: 15px;
-  border-radius: 0px 50px 0px 50px;
+  background: rgba(255, 255, 255, 0.5);
   p {
     color: #000;
     position: relative;
@@ -187,6 +186,6 @@ const Description = styled.div`
   }
   h4 {
     margin-bottom: 5px;
-    color: #efefdd;
+    color: #000;
   }
 `;

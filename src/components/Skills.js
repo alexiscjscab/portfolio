@@ -105,7 +105,7 @@ const useStyles = makeStyles((theme) => ({
   sectiondark: {
     minHeight: '100vh',
     backgroundColor: 'rgba(0,137,255,1)',
-    background: 'url(https://www.knoxalliance.store/wp-content/uploads/2017/05/light-color-background-images-for-website-top-hd-images-for-free-light-color-background-images-for-website-1-1024x768.jpg) no-repeat center center fixed',
+    background: 'url(https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) no-repeat center center fixed',
     backgroundSize: 'cover',
     color: '#000',
   },
@@ -182,7 +182,7 @@ const Ctn = styled.div`
     display: inline-block;
     font-size: 2.6rem;
     margin-bottom: 30px;
-    border-bottom: 2px solid #2082d8;
+    border-bottom: 2px solid #000;
     cursor: default;
   }
 `;

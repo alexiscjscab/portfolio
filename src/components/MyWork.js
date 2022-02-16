@@ -125,9 +125,9 @@ const useStyles = makeStyles((theme) => ({
   section: {
     minHeight: '100vh',
     backgroundColor: 'rgba(0,137,255,1)',
-    background: 'url(https://wallpapercave.com/wp/wp4312251.gif) no-repeat center center fixed',
+    background: 'url(https://images.pexels.com/photos/4218883/pexels-photo-4218883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) no-repeat center center fixed',
     backgroundSize: 'cover',
-    color: '#fff',
+    color: '#000',
   },
   sectiondark: {
     background: '#ddd',
@@ -166,17 +166,18 @@ const Project = styled.div`
   }
   a {
     text-decoration: none;
-    color: #fff;
+    color: #000;
     cursor: pointer;
     &:hover {
-      color: #000;
+      color: #fff;
     }
   }
 
   h3 {
     margin: 30px;
     font-size: 40px;
-    border-bottom: 2px solid #000;
+    color: #fff;
+    border-bottom: 2px solid #fff;
     display: inline-block;
     @media screen and (max-width: 360px) {
       margin: 10px;
