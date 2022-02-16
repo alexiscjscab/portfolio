@@ -10,6 +10,7 @@ import styled from 'styled-components';
 import ScrollAnimation from 'react-animate-on-scroll';
 
 import { SiGithub, SiGmail, SiLinkedin } from 'react-icons/si';
+import { AiFillFilePdf } from 'react-icons/ai';
 
 import cv from '../cv/cv.pdf';
 
@@ -45,7 +46,7 @@ const About = ({ id, dark }) => {
 
             <div className='content'>
               <TypeWriterEffect
-                text="Alexis Beas"
+                text='Alexis Beas'
                 textStyle={{
                   fontSize: '3rem',
                   color: 'white',
@@ -78,11 +79,12 @@ const About = ({ id, dark }) => {
               />
 
               <Cv>
-                <p>
-                  <a href={cv} download>
-                    Download CV
-                  </a>
-                </p>
+                <a href={cv} download>
+                  <p>Download CV</p>
+                  <p>
+                    <AiFillFilePdf />
+                  </p>
+                </a>
               </Cv>
             </div>
           </Ctn>
@@ -90,9 +92,20 @@ const About = ({ id, dark }) => {
 
         <ScrollAnimation animateIn='flipInY' animateOut='fadeOutLeft'>
           <Description>
-            <h2>
-            I'm 23 years old, I'm from Córdoba Argentina 🇦🇷, I learned about web programming at the beginning of 2021 and decided to do the Henry bootcamp (+800hs) where I discovered my passion for code 👨‍💻. After graduating, I accelerated in Alkemy as a Full Stack Node/React and was able to reinforce my skills as a programmer and teamwork with an agile methodology. I am a creative person, curious and always eager to learn something new. My hobbies are Football ⚽, Basketball 🏀, Video Games 🎮, Sharing with Friends 🍻, Rock N' Roll 🤘 and Good Music 🎧
-            </h2>
+            <h2>I'm 23 years old, I'm from Córdoba Argentina 🇦🇷</h2>
+            <ul>
+              <li>Henry Bootcamp (Full Stack Student) 2021</li>
+              <li>Alkemy Acceleration Job Ready (Node/React) 2021-2022   </li>
+            </ul>
+            <div>
+              <h2>My hobbies</h2>
+              <div className='hobbies'>
+                <p>Football ⚽</p>
+                <p>Basketball 🏀</p>
+                <p>Rock And Roll 🤘🏽</p>
+                <p>Good Music 🎷</p>
+              </div>
+            </div>
           </Description>
         </ScrollAnimation>
       </div>
@@ -106,8 +119,8 @@ const useStyles = makeStyles((theme) => ({
   section: {
     minHeight: '100vh',
     backgroundColor: 'rgba(0,137,255,1)',
-    background:
-      'linear-gradient(90deg, rgba(0,137,255,1) 0%, #00bdd0 50%, rgba(0,137,255,1) 100%)',
+    background: 'url(https://wallpapercave.com/wp/wp4312251.gif) no-repeat center center fixed',
+    backgroundSize: 'cover',
     color: '#fff',
   },
   sectiondark: {
@@ -124,23 +137,46 @@ const useStyles = makeStyles((theme) => ({
 const Description = styled.div`
   display: flex;
   justify-content: center;
+  flex-direction: column;
   margin: 70px auto;
   width: 800px;
-  background: rgba(230, 230, 230, 0.22);
-  border-radius: 0px 100px 0px 100px;
-  padding: 30px;
+  padding: 15px;
+  background: rgba(255, 255, 255, 0.5);
   h2 {
     font-size: 1.8rem;
     color: #000;
-    margin: 5px;
     font-family: 'Josefin Sans', sans-serif;
-    text-shadow: 2px 1px #fff;
+    font-weight: bold;
     text-align: center;
 
     @media screen and (max-width: 900px) {
       font-size: 1.6rem;
       margin: 2px;
     }
+  }
+  ul {
+    list-style: none;
+    font-size: 1.8rem;
+    color: #000;
+    margin: 2px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+    li:before {
+      content: '🎓';
+    }
+  }
+
+  .hobbies {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 1.8rem;
+    color: #000;
+    margin: 2px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
   }
 
   @media screen and (max-width: 900px) {
@@ -150,7 +186,6 @@ const Description = styled.div`
   @media screen and (max-width: 400px) {
     width: 340px;
     padding: 5px;
-    background: transparent;
   }
 `;
 
@@ -186,20 +221,24 @@ const Ctn = styled.div`
 
 const Cv = styled.div`
   margin-top: 15px;
+
   a {
     text-decoration: none;
     color: #000;
-    font-family: 'Lobster', cursive;
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 2.2rem;
-    text-shadow: 2px 3px #fff;
-    background: rgba(255,255,255,0.5);
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.5);
     border-radius: 10px;
-    padding: 10px;
+    padding: 5px;
     transition: 0.3s ease-in-out;
     &:hover {
       color: #fff;
-      text-shadow: 2px 3px #000;
-      background: rgba(0,0,0,0.5);
+      background: rgba(0, 0, 0, 1);
+      transform: scale(1.1);
     }
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `;

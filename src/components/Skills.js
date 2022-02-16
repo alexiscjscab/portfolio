@@ -103,9 +103,11 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
   },
   sectiondark: {
-    color: '#2082d8',
-    background:
-      'linear-gradient(90deg, rgba(218,215,197,1) 0%, rgba(236,237,237,1) 50%, rgba(218,215,197,1) 100%)',
+    minHeight: '100vh',
+    backgroundColor: 'rgba(0,137,255,1)',
+    background: 'url(https://www.knoxalliance.store/wp-content/uploads/2017/05/light-color-background-images-for-website-top-hd-images-for-free-light-color-background-images-for-website-1-1024x768.jpg) no-repeat center center fixed',
+    backgroundSize: 'cover',
+    color: '#000',
   },
   sectionContent: {
     display: 'flex',

@@ -125,8 +125,9 @@ const useStyles = makeStyles((theme) => ({
   section: {
     minHeight: '100vh',
     backgroundColor: 'rgba(0,137,255,1)',
-    background:
-      'linear-gradient(90deg, rgba(0,137,255,1) 0%, #00bdd0 50%, rgba(0,137,255,1) 100%)',
+    background: 'url(https://wallpapercave.com/wp/wp4312251.gif) no-repeat center center fixed',
+    backgroundSize: 'cover',
+    color: '#fff',
   },
   sectiondark: {
     background: '#ddd',

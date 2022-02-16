@@ -67,7 +67,7 @@ const Contact = ({ id, dark }) => {
           icon: 'error',
           text: 'Please enter a valid email.',
           button: 'ok',
-          timer: '3000',
+          timer: '5000',
         });
       }
     }
@@ -166,9 +166,11 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
   },
   sectiondark: {
-    color: '#2082d8',
-    background:
-      'linear-gradient(90deg, rgba(218,215,197,1) 0%, rgba(236,237,237,1) 50%, rgba(218,215,197,1) 100%)',
+    minHeight: '100vh',
+    backgroundColor: 'rgba(0,137,255,1)',
+    background: 'url(https://www.knoxalliance.store/wp-content/uploads/2017/05/light-color-background-images-for-website-top-hd-images-for-free-light-color-background-images-for-website-1-1024x768.jpg) no-repeat center center fixed',
+    backgroundSize: 'cover',
+    color: '#000',
   },
   sectionContent: {
     display: 'flex',
@@ -301,7 +303,7 @@ const Form = styled.form`
     &:hover {
       color: #fff;
       background: #2082d8;
-      box-shadow: 8px 5px 0 rgba(10, 10, 10, 0.5);
+      box-shadow: 8px 5px 0 rgba(10, 10, 10, 1);
     }
   }
 
@@ -323,6 +325,7 @@ const Form = styled.form`
       margin: 10px;
       font-size: 34px;
     }
+    cursor: default;
   }
 `;
 
