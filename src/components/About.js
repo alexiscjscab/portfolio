@@ -94,15 +94,15 @@ const About = ({ id, dark }) => {
           <Description>
             <h2>I'm 23 years old, I'm from Córdoba Argentina 🇦🇷</h2>
             <ul>
-              <li>Henry Bootcamp (Full Stack Student) 2021</li>
-              <li>Alkemy Acceleration Job Ready (Node/React) 2021-2022   </li>
+              <li>Henry Bootcamp (Full Stack Student) 2021 💻</li>
+              <li>Alkemy Job Ready (Node/React) 2021-2022 💼</li>
             </ul>
             <div>
               <h2>My hobbies</h2>
               <div className='hobbies'>
                 <p>Football ⚽</p>
                 <p>Basketball 🏀</p>
-                <p>Videogames </p>
+                <p>Videogames 🎮 </p>
                 <p>Rock And Roll 🤘🏽</p>
                 <p>Good Music 🎷</p>
               </div>

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { makeStyles } from '@material-ui/core';
 import Slide from './imgProject/Slide';
-import { imgA, imgDog, imgE, imgW, imgR, imgP, imgOng } from './array/index';
+import { imgA, imgDog, imgE,  imgR, imgOng } from './array/index';
 
 const MyWork = ({ id, dark }) => {
   const classes = useStyles();
@@ -84,7 +84,8 @@ const MyWork = ({ id, dark }) => {
                 }
               />
 
-              <a
+              {/*
+                  <a
                 href='https://github.com/alexiscjscab/weatherReact'
                 target='_black'
               >
@@ -97,8 +98,10 @@ const MyWork = ({ id, dark }) => {
                   'Weather APP performed during the M2 Front End module in Henry. The APP consumes the Weather API was made with React Styled-Components Axios '
                 }
               />
+                */}
 
-              <a
+              {/*
+                  <a
                 href='https://github.com/alexiscjscab/Pokedex-React'
                 target='_black'
               >
@@ -111,6 +114,7 @@ const MyWork = ({ id, dark }) => {
                   'Pokedex consumes the pokemon API is made with React Styled-Components '
                 }
               />
+                */}
             </div>
           </Project>
         </div>
@@ -125,7 +129,8 @@ const useStyles = makeStyles((theme) => ({
   section: {
     minHeight: '100vh',
     backgroundColor: 'rgba(0,137,255,1)',
-    background: 'url(https://images.pexels.com/photos/4218883/pexels-photo-4218883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) no-repeat center center fixed',
+    background:
+      'url(https://images.pexels.com/photos/4218883/pexels-photo-4218883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) no-repeat center center fixed',
     backgroundSize: 'cover',
     color: '#000',
   },
