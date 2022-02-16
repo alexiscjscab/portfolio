@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core';
 
 import img from '../yo.jpeg';
 
-import TypeWriterEffect from 'react-typewriter-effect';
+import { Typewriter } from 'react-simple-typewriter';
 
 import styled from 'styled-components';
 
@@ -44,8 +44,8 @@ const About = ({ id, dark }) => {
               <img src={img} alt='' />
             </div>
 
-            <div className='content'>
-              <TypeWriterEffect
+            <div className='content' id='typeWrite'>
+              {/* <TypeWriterEffect
                 text='Alexis Beas'
                 textStyle={{
                   fontSize: '3rem',
@@ -58,25 +58,47 @@ const About = ({ id, dark }) => {
                 startDelay={100}
                 cursorColor='white'
                 typeSpeed={180}
-                hideCursorAfterText={true}
-              />
-              <TypeWriterEffect
-                textStyle={{
-                  fontSize: '2.5rem',
+                // hideCursorAfterText={true}
+                scrollArea={id}
+              /> */}
+              <p style={{
+                  fontSize: '3rem',
                   color: 'white',
                   margin: '5px',
                   fontFamily: "'Lobster', cursive",
                   textShadow: '2px 3px #000',
-                  marginBottom: '20px',
                   textAlign: 'center',
                 }}
-                startDelay={350}
-                cursorColor='white'
-                typeSpeed={180}
-                multiText={['Front End', 'Back End', 'Full Stack :)']}
-                multiTextDelay={1000}
-                hideCursorAfterText={true}
-              />
+              >
+                <Typewriter 
+                  loop
+                  cursor
+                  cursorStyle='|'
+                  typeSpeed={80}
+                  deleteSpeed={70}
+                  words={['Alexis Beas', 'Alexis Beas :)']}
+                />
+              </p>
+
+              <p style={{
+                  fontSize: '3rem',
+                  color: 'white',
+                  margin: '5px',
+                  fontFamily: "'Lobster', cursive",
+                  textShadow: '2px 3px #000',
+                  textAlign: 'center',
+                }}
+              >
+                <Typewriter 
+                  loop
+                  cursor
+                  cursorStyle='|'
+                  typeSpeed={80}
+                  deleteSpeed={70}
+                  words={['Front', 'Back', 'Fullstack :)']}
+                />
+              </p>
+              
 
               <Cv>
                 <a href={cv} download>
