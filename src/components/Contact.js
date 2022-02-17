@@ -319,7 +319,7 @@ const Form = styled.form`
   h3 {
     margin: 30px;
     font-size: 40px;
-    border-bottom: 2px solid #2082d8;
+    border-bottom: 2px solid #000;
     display: inline-block;
     text-align: center;
     @media screen and (max-width: 360px) {
