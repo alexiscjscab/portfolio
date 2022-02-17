@@ -104,9 +104,7 @@ const useStyles = makeStyles((theme) => ({
   },
   sectiondark: {
     minHeight: '100vh',
-    backgroundColor: 'rgba(0,137,255,1)',
-    background: 'url(https://images.pexels.com/photos/19670/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) no-repeat center center fixed',
-    backgroundSize: 'cover',
+    background: 'linear-gradient(90deg, rgba(255,255,255,1) 0%, rgba(241,237,237,1) 35%, rgba(239,236,236,1) 61%, rgba(191,191,191,1) 100%);',
     color: '#000',
   },
   sectionContent: {

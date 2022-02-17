@@ -130,7 +130,7 @@ const useStyles = makeStyles((theme) => ({
     minHeight: '100vh',
     backgroundColor: 'rgba(0,137,255,1)',
     background:
-      'url(https://images.pexels.com/photos/4218883/pexels-photo-4218883.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) no-repeat center center fixed',
+      'url(https://c1.wallpaperflare.com/preview/811/367/789/technology-computer-creative-design.jpg) no-repeat center center fixed',
     backgroundSize: 'cover',
     color: '#000',
   },
@@ -171,11 +171,9 @@ const Project = styled.div`
   }
   a {
     text-decoration: none;
-    color: #000;
+    color: #fff;
     cursor: pointer;
-    &:hover {
-      color: #fff;
-    }
+    
   }
 
   h3 {
@@ -189,4 +187,5 @@ const Project = styled.div`
       font-size: 34px;
     }
   }
+
 `;

@@ -186,6 +186,6 @@ const Description = styled.div`
   }
   h4 {
     margin-bottom: 5px;
-    color: #fff;
+    color: #000;
   }
 `;

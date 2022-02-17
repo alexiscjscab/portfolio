@@ -14,6 +14,7 @@ import { AiFillFilePdf } from 'react-icons/ai';
 
 import cv from '../cv/cv.pdf';
 
+
 // iconos
 export const icons = [
   {
@@ -142,7 +143,7 @@ const useStyles = makeStyles((theme) => ({
   section: {
     minHeight: '100vh',
     backgroundColor: 'rgba(0,137,255,1)',
-    background: 'url(https://images.pexels.com/photos/669996/pexels-photo-669996.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) no-repeat center center fixed',
+    background: 'url(https://c1.wallpaperflare.com/preview/811/367/789/technology-computer-creative-design.jpg) no-repeat center center fixed',
     backgroundSize: 'cover',
     color: '#fff',
   },
