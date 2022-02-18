@@ -54,32 +54,26 @@ import imgO10 from '../imgProject/ong/10alkemy.png';
 export const imgA = [
   {
     img: imgA1,
-    id: 'imgA1',
-    link: 'https://pokedexreactalexiscjscab.netlify.app/',
+    link: 'https://github.com/alexiscjscab/alkemy-fullstack',
   },
   {
     img: imgA2,
-    id: 'imgA2',
     link: 'https://github.com/alexiscjscab/alkemy-fullstack',
   },
   {
     img: imgA3,
-    id: 'imgA3',
     link: 'https://github.com/alexiscjscab/alkemy-fullstack',
   },
   {
     img: imgA4,
-    id: 'imgA5',
     link: 'https://github.com/alexiscjscab/alkemy-fullstack',
   },
   {
     img: imgA5,
-    id: 'imgA5',
     link: 'https://github.com/alexiscjscab/alkemy-fullstack',
   },
   {
     img: imgA6,
-    id: 'imgA6',
     link: 'https://github.com/alexiscjscab/alkemy-fullstack',
   },
 ];
@@ -141,7 +135,6 @@ export const imgR = [
   },
   {
     img: imgR3,
-    id: 'imgR3',
     link: 'https://github.com/alexiscjscab/ReactRickAndMorty',
   },
   {
