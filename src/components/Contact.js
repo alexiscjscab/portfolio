@@ -122,6 +122,17 @@ const Contact = ({ id, dark }) => {
           </Form>
         </div>
 
+        <ArrowUp>
+          <Link
+            to={'about'}
+            spy={true}
+            smooth={true}
+            duration={500}
+            offset={-70}
+          >
+              <BiUpArrowCircle size={75} className='up'/>
+          </Link>
+        </ArrowUp>
         
 
         <Social>
@@ -139,17 +150,7 @@ const Contact = ({ id, dark }) => {
             ))}
           </div>
         </Social>
-        <ArrowUp>
-          <Link
-            to={'about'}
-            spy={true}
-            smooth={true}
-            duration={500}
-            offset={-70}
-          >
-              <BiUpArrowCircle size={75} className='up'/>
-          </Link>
-        </ArrowUp>
+        
       </div>
     </div>
   );
@@ -378,10 +379,10 @@ const ArrowUp = styled.div`
     position: sticky;
     bottom: 0;
     width: 1px;
+    z-index: 11;
   .up {
     color: #2082d8;
     cursor: pointer;
-
     &:hover {
       transform: scale(1.111);
     }
