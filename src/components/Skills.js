@@ -137,8 +137,8 @@ const moverLeft = keyframes`
 
 const ListSkillsL = styled.div`
   img {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     margin: 3px;
     padding: 3px;
     border-radius: 50px;
@@ -155,8 +155,8 @@ const ListSkillsL = styled.div`
 const ListSkillsR = styled.div`
   
   img {
-    width: 35px;
-    height: 35px;
+    width: 40px;
+    height: 40px;
     margin: 3px;
     padding: 3px;
     border-radius: 50px;
