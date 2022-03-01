@@ -7,6 +7,7 @@ import { icons } from './About';
 import emailjs from 'emailjs-com';
 import { BiUpArrowCircle } from 'react-icons/bi';
 import { Link } from 'react-scroll';
+import Animated from './background/Animated.svg'
 
 const Contact = ({ id, dark }) => {
   const classes = useStyles();
@@ -168,9 +169,8 @@ const useStyles = makeStyles((theme) => ({
   },
   sectiondark: {
     minHeight: '100vh',
-    backgroundColor: 'rgba(0,137,255,1)',
-    background:
-      `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='560' preserveAspectRatio='none' viewBox='0 0 1440 560'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1042%26quot%3b)' fill='none'%3e%3crect width='1440' height='560' x='0' y='0' fill='rgba(231%2c 243%2c 255%2c 1)'%3e%3c/rect%3e%3cpath d='M435.66185175199377 14.619343659422995L337.75373242109083 39.030579514328856 362.16496827599667 136.93869884523178 460.0730876068996 112.52746299032594z' fill='rgba(89%2c 89%2c 89%2c 1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M1034.98 279.65 a111.46 111.46 0 1 0 222.92 0 a111.46 111.46 0 1 0 -222.92 0z' fill='rgba(89%2c 89%2c 89%2c 1)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M1248.597%2c552.313C1283.269%2c551.42%2c1309.003%2c524.253%2c1326.398%2c494.247C1343.861%2c464.124%2c1355.566%2c427.775%2c1338.331%2c397.521C1320.968%2c367.042%2c1283.672%2c357.332%2c1248.597%2c357.675C1214.233%2c358.011%2c1179.626%2c369.834%2c1161.852%2c399.247C1143.521%2c429.582%2c1146.06%2c467.604%2c1163.535%2c498.44C1181.271%2c529.736%2c1212.637%2c553.239%2c1248.597%2c552.313' fill='rgba(89%2c 89%2c 89%2c 1)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M387.3806709869692 449.8140031329142L363.8129258935286 347.2851853365323 295.47060785294275 408.82088489696514z' fill='rgba(89%2c 89%2c 89%2c 1)' class='triangle-float1'%3e%3c/path%3e%3cpath d='M201.65856580886575 198.68938597353286L80.26489702459584 170.66344924721275 52.23896029827574 292.0571180314827 173.63262908254563 320.08305475780276z' fill='rgba(89%2c 89%2c 89%2c 1)' class='triangle-float3'%3e%3c/path%3e%3cpath d='M880.075%2c434.386C906.447%2c432.347%2c923.014%2c409.221%2c936.528%2c386.483C950.478%2c363.013%2c965.812%2c335.901%2c952.911%2c311.838C939.571%2c286.957%2c908.3%2c280.575%2c880.075%2c281.19C853.114%2c281.778%2c827.085%2c292.19%2c812.538%2c314.897C796.752%2c339.538%2c791.766%2c371.085%2c806.166%2c396.561C820.761%2c422.384%2c850.501%2c436.672%2c880.075%2c434.386' fill='rgba(89%2c 89%2c 89%2c 1)' class='triangle-float3'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1042'%3e%3crect width='1440' height='560' fill='white'%3e%3c/rect%3e%3c/mask%3e%3cstyle%3e %40keyframes float1 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-10px%2c 0)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float1 %7b animation: float1 5s infinite%3b %7d %40keyframes float2 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(-5px%2c -5px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float2 %7b animation: float2 4s infinite%3b %7d %40keyframes float3 %7b 0%25%7btransform: translate(0%2c 0)%7d 50%25%7btransform: translate(0%2c -10px)%7d 100%25%7btransform: translate(0%2c 0)%7d %7d .triangle-float3 %7b animation: float3 6s infinite%3b %7d %3c/style%3e%3c/defs%3e%3c/svg%3e");`,
+    backgroundColor: '#ddd',
+    background: 'url('+Animated+')',
     color: '#000',
     backgroundSize: '100% 100%',
   },
@@ -302,6 +302,7 @@ const Form = styled.form`
     color: #000;
     width: 100px;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
     &:hover {
       color: #fff;
       background: #2082d8;
@@ -357,7 +358,7 @@ const Social = styled.div`
       color: #fff;
       font-size: 16px;
       margin: 0 5px;
-
+      transition: all 0.3s ease-in-out;
       &:hover {
         color: #2082d8;
       }
@@ -380,9 +381,13 @@ const ArrowUp = styled.div`
     bottom: 0;
     width: 1px;
     z-index: 11;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-left: 4px;
   .up {
     color: #2082d8;
     cursor: pointer;
+    transition: all 0.3s ease-in-out;
     &:hover {
       transform: scale(1.111);
     }
