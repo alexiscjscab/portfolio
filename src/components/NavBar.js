@@ -50,12 +50,21 @@ const items = [
 ];
 
 const NavBar = () => {
-  // classes useStyles()
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
+  const [colorChange, setColorChange] = useState(false);
+
+  const changeColorNavBar = () => {
+    if(window.scrollY >= 500) setColorChange(true)
+    else setColorChange(false)
+  }
+
+  window.addEventListener('scroll', changeColorNavBar);
+
+  
   return (
-    <AppBar position='sticky' className={classes.root}>
+    <AppBar className={classes.root} style={{backgroundColor: colorChange ? '#000' : '#fff', color: colorChange ? '#fff' : '#000'}}>
       <Toolbar className={classes.toolbar}>
         <List className={classes.menu}>
           {items.map(({ id, text }, i) => (
@@ -120,15 +129,14 @@ export default NavBar;
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    backgroundColor: '#000',
-    top: 0,
-    left: 0,
-    right: 0,
-    color: '#fff',
-    height: '60px',
+    // backgroundColor: props => props.color,
+    
     fontFamily: "'Josefin Sans', sans-serif",
   },
   toolbar: {
+    position: 'sticky',
+    top: '0',
+    height: '60px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -138,14 +146,9 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
     '& a': {
-      color: '#fff',
       fontSize: '1.4rem',
       fontWeight: 'bold',
       marginLeft: theme.spacing(3),
-      transition: theme.transitions.create(['all'], {
-        easing: theme.transitions.easing.sharp,
-        duration: theme.transitions.duration.enteringScreen,
-      }),
       '&:hover': {
         cursor: 'pointer',
         color: '#2082d8',
@@ -175,14 +178,12 @@ const useStyles = makeStyles((theme) => ({
     '& h5': {
       margin: theme.spacing(8, 0, 0, 0),
       fontSize: '1.4rem',
-      color: '#fff',
       fontWeight: 'bold',
       transition: theme.transitions.create(['all'], {
         easing: theme.transitions.easing.sharp,
         duration: theme.transitions.duration.enteringScreen,
       }),
       '&:hover': {
-        color: '#000',
         cursor: 'pointer',
         '& span': {
           borderBottom: '3px solid #000',

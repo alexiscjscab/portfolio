@@ -156,6 +156,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
+    alignItems: 'center'
   },
 }));
 
@@ -221,9 +222,8 @@ const Ctn = styled.div`
   justify-content: space-evenly;
   flex-wrap: wrap;
   align-items: center;
-  margin-top: 70px;
   padding: 10px;
-
+  margin-top: 50px;
   .imagen {
     display: flex;
     justify-content: center;

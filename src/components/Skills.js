@@ -143,7 +143,7 @@ const ListSkillsL = styled.div`
     padding: 3px;
     border-radius: 50px;
     animation-name: ${moverLeft};
-    animation-duration: 8s;
+    animation-duration: 5s;
     background: #333;
     cursor: pointer;
     animation-iteration-count: infinite;
@@ -163,7 +163,7 @@ const ListSkillsR = styled.div`
     z-index: 999;
     background: #333;
     animation-name: ${moverRight};
-    animation-duration: 8s;
+    animation-duration: 5s;
     cursor: pointer;
     animation-iteration-count: infinite;
     animation-direction: alternate;
