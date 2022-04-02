@@ -279,7 +279,7 @@ const Description = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  margin: 5px 0;
   .hobbies {
     display: flex;
     flex-direction: column;
@@ -290,7 +290,6 @@ const Description = styled.div`
     background: rgba(230,230,230,0.4);
     box-shadow: 0px 0px 10px #000;
     transition: all 0.3s ease-in-out;
-    margin-top: 10px;
     &:hover{
       transform: scale(1.1) translateY(-5px);
       box-shadow: 0px 0px 5px #fff inset, 0px 0px 10px #000;

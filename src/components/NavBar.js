@@ -64,7 +64,7 @@ const NavBar = () => {
 
   
   return (
-    <AppBar className={classes.root} style={{backgroundColor: colorChange ? '#000' : 'rgba(230,230,230,0.88)', color: colorChange ? '#fff' : '#000'}}>
+    <AppBar position='sticky' className={classes.root} style={{backgroundColor: colorChange ? '#000' : 'rgba(230,230,230,0.88)', color: colorChange ? '#fff' : '#000'}}>
       <Toolbar className={classes.toolbar}>
         <List className={classes.menu}>
           {items.map(({ id, text }, i) => (
