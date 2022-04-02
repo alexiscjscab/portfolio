@@ -132,7 +132,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: "'Josefin Sans', sans-serif",
   },
   toolbar: {
-    position: 'sticky',
+    // position: 'sticky',
     top: '0',
     height: '60px',
     display: 'flex',
