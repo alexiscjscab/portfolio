@@ -56,7 +56,7 @@ const NavBar = () => {
   const [colorChange, setColorChange] = useState(false);
 
   const changeColorNavBar = () => {
-    if(window.scrollY >= 500) setColorChange(true)
+    if(window.scrollY >= 800) setColorChange(true)
     else setColorChange(false)
   }
 
@@ -64,7 +64,7 @@ const NavBar = () => {
 
   
   return (
-    <AppBar className={classes.root} style={{backgroundColor: colorChange ? '#000' : '#fff', color: colorChange ? '#fff' : '#000'}}>
+    <AppBar className={classes.root} style={{backgroundColor: colorChange ? '#000' : 'rgba(230,230,230,0.88)', color: colorChange ? '#fff' : '#000'}}>
       <Toolbar className={classes.toolbar}>
         <List className={classes.menu}>
           {items.map(({ id, text }, i) => (
@@ -128,9 +128,7 @@ const NavBar = () => {
 export default NavBar;
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    // backgroundColor: props => props.color,
-    
+  root: {    
     fontFamily: "'Josefin Sans', sans-serif",
   },
   toolbar: {

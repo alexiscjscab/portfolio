@@ -116,27 +116,59 @@ const About = ({ id, dark }) => {
 
         <ScrollAnimation animateIn='flipInY' animateOut='fadeOutLeft'>
           <Description>
-            <h2>I'm 23 years old, I'm from Córdoba Argentina 🇦🇷</h2>
-            <ul>
-              <li>Henry Bootcamp (Full Stack Student) 2021 💻</li>
-              <li>Alkemy Job Ready (Node/React) 2021-2022 💼</li>
-            </ul>
-            <div>
-              <h2>My hobbies</h2>
-              <div className='hobbies'>
-                <p>Football ⚽</p>
-                <p>Basketball 🏀</p>
-                <p>Videogames 🎮 </p>
-                <p>Rock And Roll 🤘🏽</p>
-                <p>Good Music 🎷</p>
-              </div>
+            <div className='contentOne'>
+
+            <div className='aboutMe'>
+              <p>About Me</p>
+              <ul>
+                <li>
+                I am 23 years old, from Cordoba Argentina
+                </li>
+                
+                <li>
+                I currently work as a front end developer
+                </li>
+              
+              </ul>
             </div>
+
+            <div className='academic'>
+              <p>Studies / Practices </p>
+              <ul>
+                <li>Henry Bootcamp (Full Stack Student) 2021 💻</li>
+                <li>Alkemy Job Ready (Node / React) 2021-2022 💼</li>
+              </ul>
+            </div>
+
+            </div>
+            <div className='contentTwo'>
+                <div className='hobbies'>
+              <p>My Hobbies</p>
+              <ul>
+                <li>
+                  Football ⚽
+                </li>
+                <li>
+                  Basketball 🏀
+                </li>
+                <li>
+                  Videogames 🎮
+                </li>
+                <li>
+                  Rock N' Roll 🤘🏽
+                </li>
+              </ul>
+            </div>
+            </div>
+            
+
           </Description>
         </ScrollAnimation>
       </div>
     </div>
   );
 };
+
 
 export default About;
 
@@ -156,65 +188,131 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
-    alignItems: 'center'
+    alignItems: 'center',
   },
 }));
 
 const Description = styled.div`
+    width: 100vw;
+    margin-top: 2 rem;
+  .contentOne {
+
+    display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin-top: 2.5rem;
+  cursor: default;
+  .aboutMe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+    border-radius: 10px;
+    background: rgba(230,230,230,0.4);
+    box-shadow: 0px 0px 10px #000;
+    transition: all 0.3s ease-in-out;
+    &:hover{
+      transform: scale(1.1) translateY(-5px);
+      box-shadow: 0px 0px 5px #fff inset, 0px 0px 10px #000;
+    }
+    p {
+      font-family: 'Josefin Sans', sans-serif;
+      border-bottom: 1px solid #fff;
+      letter-spacing: 1px;
+      font-weight: 700;
+      margin: 5px 0;
+    }
+    ul {
+      list-style: none;
+      color: #000;
+      margin: 2px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-weight: 800;
+      text-align: center;
+      color: rgba(0,0,0,1);
+      text-shadow: 0px 0px 2px #fff;
+      
+    }
+  }
+  
+  .academic {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 5px;
+    border-radius: 10px;
+    background: rgba(230,230,230,0.4);
+    box-shadow: 0px 0px 10px #000;
+    transition: all 0.3s ease-in-out;
+    &:hover{
+      transform: scale(1.1) translateY(-5px);
+      box-shadow: 0px 0px 5px #fff inset, 0px 0px 10px #000;
+    }
+    p {
+      font-family: 'Josefin Sans', sans-serif;
+      border-bottom: 1px solid #fff;
+      letter-spacing: 1px;
+      font-weight: 700;
+      margin: 5px 0;
+    }
+    ul {
+      list-style: none;
+      color: #000;
+      margin: 2px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-weight: 800;
+      text-align: center;
+      color: rgba(0,0,0,1);
+      text-shadow: 0px 0px 2px #fff;
+      
+    }
+  }
+}
+
+.contentTwo {
   display: flex;
   justify-content: center;
-  flex-direction: column;
-  margin: 70px auto;
-  width: 800px;
-  padding: 15px;
-  background: rgba(255,255,255,0.5);
-
-  h2 {
-    font-size: 1.8rem;
-    color: #000;
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: bold;
-    text-align: center;
-
-    @media screen and (max-width: 900px) {
-      font-size: 1.6rem;
-      margin: 2px;
-    }
-  }
-  ul {
-    list-style: none;
-    font-size: 1.8rem;
-    color: #000;
-    margin: 2px;
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: bold;
-    text-align: center;
-    margin: 10px;
-    li:before {
-      content: '🎓';
-    }
-  }
-
+  align-items: center;
+  margin-top: 2.5rem;
   .hobbies {
     display: flex;
-    flex-direction: row;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    font-size: 1.8rem;
-    color: #000;
-    margin: 2px;
-    font-family: 'Josefin Sans', sans-serif;
-    font-weight: bold;
-  }
-
-  @media screen and (max-width: 900px) {
-    width: 380px;
-  }
-
-  @media screen and (max-width: 400px) {
-    width: 340px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     padding: 5px;
+    border-radius: 10px;
+    background: rgba(230,230,230,0.4);
+    box-shadow: 0px 0px 10px #000;
+    transition: all 0.3s ease-in-out;
+    &:hover{
+      transform: scale(1.1) translateY(-5px);
+      box-shadow: 0px 0px 5px #fff inset, 0px 0px 10px #000;
+    }
+    p {
+      font-family: 'Josefin Sans', sans-serif;
+      border-bottom: 1px solid #fff;
+      letter-spacing: 1px;
+      font-weight: 700;
+      margin: 5px 0;
+    }
+    ul {
+      list-style: none;
+      color: #000;
+      margin: 2px;
+      font-family: 'Josefin Sans', sans-serif;
+      font-weight: 800;
+      text-align: center;
+      color: rgba(0,0,0,1);
+      text-shadow: 0px 0px 2px #fff;
+    }
   }
+
+}
+
 `;
 
 const Ctn = styled.div`
@@ -223,7 +321,7 @@ const Ctn = styled.div`
   flex-wrap: wrap;
   align-items: center;
   padding: 10px;
-  margin-top: 50px;
+  margin-top: 4rem;
   .imagen {
     display: flex;
     justify-content: center;
@@ -231,8 +329,8 @@ const Ctn = styled.div`
     margin: 10px 0 10px 20px;
 
     img {
-      height: 300px;
-      width: 300px;
+      height: 260px;
+      width: 260px;
       border-radius: 50%;
       filter: sepia(10%);
     }
@@ -253,7 +351,7 @@ const Cv = styled.div`
     text-decoration: none;
     color: #000;
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 2.2rem;
+    font-size: 1.5rem;
     font-weight: bold;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 10px;
