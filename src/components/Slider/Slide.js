@@ -218,7 +218,7 @@ const Icons = styled.div`
     transition: 0.3s ease-in-out all;
     &:hover {
       color: #fff;
-      transform: translateY(-5px);
+      transform: translateY(-5px) rotate(360deg);
     }
   }
 `;
