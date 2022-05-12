@@ -9,30 +9,10 @@ import styled from 'styled-components';
 
 import ScrollAnimation from 'react-animate-on-scroll';
 
-import { SiGithub, SiGmail, SiLinkedin } from 'react-icons/si';
 import { AiFillFilePdf } from 'react-icons/ai';
 
 import cv from '../cv/cv.pdf';
 import wawe from './background/WaweLightBlue.svg';
-
-// iconos
-export const icons = [
-  {
-    icon: <SiGithub size={30} />,
-    text: 'alexiscjscab',
-    link: 'https://github.com/alexiscjscab',
-  },
-  {
-    icon: <SiLinkedin size={30} />,
-    text: 'alexis-beas-dev',
-    link: 'https://www.linkedin.com/in/alexis-beas-dev/',
-  },
-  {
-    icon: <SiGmail size={30} />,
-    text: 'alexiscjscab@gmail.com',
-    link: 'mailto:alexiscjscab@gmail.com',
-  },
-];
 
 const About = ({ id, dark }) => {
   const classes = useStyles();
@@ -46,22 +26,6 @@ const About = ({ id, dark }) => {
             </div>
 
             <div className='content' id='typeWrite'>
-              {/* <TypeWriterEffect
-                text='Alexis Beas'
-                textStyle={{
-                  fontSize: '3rem',
-                  color: 'white',
-                  margin: '5px',
-                  fontFamily: "'Lobster', cursive",
-                  textShadow: '2px 3px #000',
-                  textAlign: 'center',
-                }}
-                startDelay={100}
-                cursorColor='white'
-                typeSpeed={180}
-                // hideCursorAfterText={true}
-                scrollArea={id}
-              /> */}
               <p
                 style={{
                   fontSize: '3rem',

@@ -1,3 +1,10 @@
+// Icons
+import { SiGithub, SiGmail, SiLinkedin } from 'react-icons/si';
+import BuildTwoToneIcon from "@material-ui/icons/BuildTwoTone";
+import InfoTwoToneIcon from "@material-ui/icons/InfoTwoTone";
+import EmojiObjectsTwoToneIcon from "@material-ui/icons/EmojiObjectsTwoTone";
+import ContactMailTwoToneIcon from "@material-ui/icons/ContactMailTwoTone";
+
 import imgA1 from "../components/imgProject/alkemy/1.png";
 import imgA2 from "../components/imgProject/alkemy/2.png";
 import imgA3 from "../components/imgProject/alkemy/3.png";
@@ -129,5 +136,50 @@ export const imgOng = [
   },
   {
     img: imgO10,
+  },
+];
+
+// iconos
+export const icons = [
+  {
+    icon: <SiGithub size={30} />,
+    text: 'alexiscjscab',
+    link: 'https://github.com/alexiscjscab',
+  },
+  {
+    icon: <SiLinkedin size={30} />,
+    text: 'alexis-beas-dev',
+    link: 'https://www.linkedin.com/in/alexis-beas-dev/',
+  },
+  {
+    icon: <SiGmail size={30} />,
+    text: 'alexiscjscab@gmail.com',
+    link: 'mailto:alexiscjscab@gmail.com',
+  },
+];
+
+export const items = [
+  {
+    id: "about",
+    text: "About Me",
+    icon: <InfoTwoToneIcon fontSize="large" />,
+  },
+
+  {
+    id: "skills",
+    text: "Skills",
+    icon: <EmojiObjectsTwoToneIcon fontSize="large" />,
+  },
+
+  {
+    id: "work",
+    text: "My Work",
+    icon: <BuildTwoToneIcon fontSize="large" />,
+  },
+
+  {
+    id: "contact",
+    text: "Contact",
+    icon: <ContactMailTwoToneIcon fontSize="large" />,
   },
 ];

@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core';
 import styled from 'styled-components';
 import swal from 'sweetalert';
 import ScrollAnimation from 'react-animate-on-scroll';
-import { icons } from './About';
+import { icons } from '../array/index';
 import emailjs from 'emailjs-com';
 import { BiUpArrowCircle } from 'react-icons/bi';
 import { Link } from 'react-scroll';
