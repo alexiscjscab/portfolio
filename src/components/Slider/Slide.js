@@ -1,11 +1,11 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React, { useRef, useEffect } from 'react';
-import styled from 'styled-components';
+import React, { useRef, useEffect } from "react";
+import styled from "styled-components";
 
-import { AiFillLeftCircle } from 'react-icons/ai';
-import { AiFillRightCircle } from 'react-icons/ai';
+import { AiFillLeftCircle, AiFillRightCircle } from "react-icons/ai";
+import { SiGithub } from "react-icons/si";
 
-const Slide = ({ img, type, description }) => {
+const Slide = ({ img, type, description, link, linkTwo }) => {
   const slideshow = useRef(null);
   const intervaloSlideshow = useRef(null);
 
@@ -26,7 +26,7 @@ const Slide = ({ img, type, description }) => {
 
         const transicion = () => {
           // cambio
-          slideshow.current.style.transition = 'none';
+          slideshow.current.style.transition = "none";
           slideshow.current.style.transform = `translateX(0)`;
 
           /// mandar primer elemento al final
@@ -34,12 +34,12 @@ const Slide = ({ img, type, description }) => {
 
           // remove evenListener
 
-          slideshow.current.removeEventListener('transitionend', transicion);
+          slideshow.current.removeEventListener("transitionend", transicion);
         };
 
         // eventListener
 
-        slideshow.current.addEventListener('transitionend', transicion);
+        slideshow.current.addEventListener("transitionend", transicion);
       }
     } catch (error) {
       console.log(error);
@@ -58,14 +58,14 @@ const Slide = ({ img, type, description }) => {
           slideshow.current.firstChild
         );
 
-        slideshow.current.style.transition = 'none';
+        slideshow.current.style.transition = "none";
 
         const tamañoSlide = slideshow.current.children[0].offsetWidth;
 
         slideshow.current.style.transform = `translateX(-${tamañoSlide}px)`;
 
         setTimeout(() => {
-          slideshow.current.style.transition = '100ms ease-out all';
+          slideshow.current.style.transition = "100ms ease-out all";
           slideshow.current.style.transform = `translateX(0px)`;
         }, 30);
       }
@@ -80,11 +80,11 @@ const Slide = ({ img, type, description }) => {
         siguiente();
       }, 5000);
 
-      slideshow.current.addEventListener('mouseenter', () => {
+      slideshow.current.addEventListener("mouseenter", () => {
         clearInterval(intervaloSlideshow.current);
       });
 
-      slideshow.current.addEventListener('mouseleave', () => {
+      slideshow.current.addEventListener("mouseleave", () => {
         intervaloSlideshow.current = setInterval(() => {
           siguiente();
         }, 5000);
@@ -95,16 +95,14 @@ const Slide = ({ img, type, description }) => {
   }, []);
 
   return (
-    <div>
+    <>
       <CtnSlider ref={slideshow}>
-        {img.map(({ img, link }, index) => (
+        {img.map(({ img }, index) => (
           <Slider key={index}>
             <div>
-              <a href={link} target='_blank'>
-                <img src={img} alt='' height={140} />
-              </a>
+              <img src={img} alt="" height={140} />
             </div>
-            <div className='button'>
+            <div className="button">
               <span>
                 <AiFillLeftCircle size={30} onClick={anterior} />
               </span>
@@ -117,9 +115,24 @@ const Slide = ({ img, type, description }) => {
       </CtnSlider>
       <Description>
         <h4>{type}</h4>
-        <p>{description}</p>
+        <Icons>
+          <a href={link} target="_blank" rel="noopener noreferrer">
+            <p>
+              
+              <SiGithub size={30} />
+            </p>
+          </a>
+          {linkTwo && (
+            <a href={linkTwo} target="_blank" rel="noopener noreferrer">
+              <p>
+                <SiGithub size={30} />
+              </p>
+            </a>
+          )}
+        </Icons>
+        <p className='description'>{description}</p>
       </Description>
-    </div>
+    </>
   );
 };
 
@@ -131,15 +144,16 @@ const Slider = styled.div`
   transition: 0.3s ease all;
   z-index: 100;
   /* max-height: 500px; */
+  
 
   img {
-    width: 800px;
-    height: 300px;
+    width: 500px;
+    height: 220px;
     border-radius: 10px;    
     object-fit: content;
     @media screen and (max-width: 900px) {
-      width: 500px;
-      height: 200px;
+      width: 480px;
+      height: 180px;
     }
     @media screen and (max-width: 500px) {
       width: 360px;
@@ -155,7 +169,7 @@ const Slider = styled.div`
     display: flex;
     justify-content: space-between;
     position: relative;
-    top: -48px;
+    top: -30px;
     margin: 2px;
   
 
@@ -179,13 +193,32 @@ const Description = styled.div`
   padding: 10px;
   margin-bottom: 15px;
   background: rgba(255, 255, 255, 0.5);
-  p {
+  .description{ 
+    p {
     color: #000;
     position: relative;
     font-size: 20px;
+    }
   }
   h4 {
     margin-bottom: 5px;
     color: #000;
+  }
+`;
+
+const Icons = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  a {
+    margin: 5px;
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.3s ease-in-out all;
+    &:hover {
+      color: #fff;
+      transform: translateY(-5px);
+    }
   }
 `;

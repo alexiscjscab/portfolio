@@ -2,8 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import ScrollAnimation from "react-animate-on-scroll";
 import { makeStyles } from "@material-ui/core";
-import Slide from "./imgProject/Slide";
-import { imgA, imgE, imgR, imgOng } from "./array/index";
+import Slide from "./Slider/Slide";
+import { imgA, imgE, imgR, imgOng } from "../array/index";
 
 const MyWork = ({ id, dark }) => {
   const classes = useStyles();
@@ -16,106 +16,47 @@ const MyWork = ({ id, dark }) => {
               <h3>Projects</h3>
             </ScrollAnimation>
             <div>
-              <a
-                href="https://github.com/alkemyTech/OT102-Client"
-                target="_black"
-              >
-                <h1>ONG Somos Mas (Alkemy) </h1>
-              </a>
+              <h1>ONG Somos Mas (Alkemy) </h1>
               <Slide
                 img={imgOng}
                 type={"FULL STACK NODE / REACT"}
                 description={
                   'Group project between 6 people for the acceleration "JOB READY" of full stack node react in ALKEMY. Using good practices, GITFLOW as a workflow and SCRUM as an agile methodology. The technologies used were Node Express Sequelize MySQL React Redux ChakraUI JWT LocalStorage Formik, testing like Mocha, Chai and other technologies'
                 }
+                link={"https://github.com/alkemyTech/OT102-Client"}
+                linkTwo={"htpps://github.com/alkemyTech/OT102-Server"}
               />
-              <a
-                href="https://github.com/alexiscjscab/ReactRickAndMorty"
-                target="_black"
-              >
-                <h1>Rick And Morty </h1>
-              </a>
-              <Slide
-                img={imgR}
-                type={"CHALLENGE REACT SASS"}
-                description={
-                  "Back with Node Express and Axios consumes necessary data from the Rick And Morty API to send to the client. Front React Redux SASS Axios I request the back and receive JSON and also show the content and add functionalities such as filtering by gender, status, location, episodes and search by name "
-                }
-              />
-              <a
-                href="https://github.com/alexiscjscab/alkemy-fullstack"
-                target="_black"
-              >
-                <h1>Challenge Alkemy </h1>
-              </a>
-              <Slide
-                img={imgA}
-                type={"CHALLENGE FULL STACK NODE REACT"}
-                description={
-                  "Challenge (Income / expenses) to do the Acceleration in Alkemy as a full stack Node / React. Back Node Express Sequelize Postgres. Front React Redux Styled-Components "
-                }
-              />
+              <h1>Cute Clothes </h1>
 
-              <a
-                href="https://github.com/tomasellis/henry-ecommerce"
-                target="_black"
-              >
-                <h1>Cute Clothes </h1>
-              </a>
               <Slide
                 img={imgE}
-                type={"FULL STACK E-COMMERCE TYPESCRIPT NODE REACT"}
+                type={"E-COMMERCE TYPESCRIPT NODE / REACT"}
                 description={
                   "Group Project of 6 people in Henry an E-Commerce made with Typescript. Back was with Node Express GraphQL. Front with React Redux MaterialUI Styled-Components. I worked as Front End, we used agile methodology such as SCRUM, having 30 min daily every day and once a week we presented the project to a Product Ower belonging to the Staff"
                 }
+                link={"https://github.com/tomasellis/henry-ecommerce"}
               />
-              {/* 
-                <a
-                href='https://github.com/alexiscjscab/PI-Dogs-FT15a'
-                target='_black'
-                >
-                <h1>App Dogs </h1>
-              </a>
-              <Slide
-                img={imgDog}
-                type={'SPA FULL STACK'}
-                description={
-                  'Individual Project in Henry a SPA that consumes the back an API Dogs giving improvements such as filtering, ordering and search. The Front React Redux Styled-Components was made with Node Express Sequelize Postgres Axios.'
-                }
-                />
-              */}
 
-              {/*
-                  <a
-                href='https://github.com/alexiscjscab/weatherReact'
-                target='_black'
-              >
-                <h1>Weather App </h1>
-              </a>
+              <h1>Rick And Morty </h1>
               <Slide
-                img={imgW}
-                type={'REACT/ STYLED-COMPONENTS'}
+                img={imgR}
+                type={"CHALLENGE FRONT REACT / SASS"}
                 description={
-                  'Weather APP performed during the M2 Front End module in Henry. The APP consumes the Weather API was made with React Styled-Components Axios '
+                  "Back with Node Express and Axios consumes necessary data from the Rick And Morty API to send to the client. Front React Redux SASS Axios I request the back and receive JSON and also show the content and add functionalities such as filtering by gender, status, location, episodes and search by name "
                 }
+                link={"https://github.com/alexiscjscab/ReactRickAndMorty"}
               />
-                */}
 
-              {/*
-                  <a
-                href='https://github.com/alexiscjscab/Pokedex-React'
-                target='_black'
-              >
-                <h1>Pokedex </h1>
-              </a>
+              <h1>Challenge Alkemy </h1>
+
               <Slide
-                img={imgP}
-                type={'REACT/ STYLED-COMPONENTS'}
+                img={imgA}
+                type={"CHALLENGE NODE REACT"}
                 description={
-                  'Pokedex consumes the pokemon API is made with React Styled-Components '
+                  "Challenge (Income / expenses) to do the Acceleration in Alkemy as a full stack Node / React. Back Node Express Sequelize Postgres. Front React Redux Styled-Components "
                 }
+                link={"https://github.com/alexiscjscab/alkemy-fullstack"}
               />
-                */}
             </div>
           </Project>
         </div>
@@ -153,9 +94,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Project = styled.div`
-  width: 800px;
+  width: 500px;
   overflow: hidden;
-  height: 300px;
   font-family: "Josefin Sans", sans-serif;
   color: #000;
   height: 100%;
@@ -168,11 +108,6 @@ const Project = styled.div`
   }
   @media screen and (max-width: 360px) {
     width: 338px;
-  }
-  a {
-    text-decoration: none;
-    color: #fff;
-    cursor: pointer;
   }
 
   h3 {

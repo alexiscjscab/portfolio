@@ -110,7 +110,6 @@ const Contact = ({ id, dark }) => {
                 <textarea
                   name='message'
                   placeholder=' Message...'
-                  maxLength={800}
                   onChange={(e) => setMessage(e.target.value)}
                   value={message}
                 />
@@ -252,7 +251,7 @@ const Form = styled.form`
   }
 
   .inputTextarea textarea {
-    overflow: hidden;
+    //overflow: hidden;
     outline: 0;
     resize: none;
     height: 240px;
