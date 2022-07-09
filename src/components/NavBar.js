@@ -7,21 +7,17 @@ import {
   List,
   IconButton,
   Drawer,
-  Divider,
   ListItem,
   ListItemIcon,
 } from "@material-ui/core";
 
 // Iconos
-
 import MenuIcon from "@material-ui/icons/Menu";
 import CancelIcon from "@material-ui/icons/Cancel";
 
 // Link react scroll
 import { Link } from "react-scroll";
 import { items } from "../array";
-
-
 
 const NavBar = () => {
   const classes = useStyles();
@@ -76,7 +72,6 @@ const NavBar = () => {
               <CancelIcon fontSize="large" className={classes.cancelIcon} />
             </IconButton>
           </div>
-          <Divider className={classes.divider} />
           <div className={classes.background}>
           {items.map(({ id, text, icon }, i) => (
             <Link
@@ -147,23 +142,13 @@ const useStyles = makeStyles((theme) => ({
   },
   drawer: {
     fontFamily: "'Josefin Sans', sans-serif",
-    //height: "100%",
-    //  
-    //height: "100",
+    background: "#2082d8",
+    position: "relative",
   },
   background:{
-    width: "100%",
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    flexDirection: "column",
-    background: "#2082d8",
-    height: "100%",
-    overflowY: "hidden",
+    height: "100vh",
   },
   sidebar: {
-    
-    
     "& h5": {
       margin: theme.spacing(8, 0, 0, 0),
       fontSize: "1.4rem",
@@ -183,12 +168,12 @@ const useStyles = makeStyles((theme) => ({
   cancelIcon: {
     color: "#fff",
     "&:hover": {
-      color: "#2082d8",
+      color: "#000",
     },
   },
   iconButton: {
     display: "flex",
     justifyContent: "flex-end",
-    background: "rgba(30,30,30,0.5)",
+    background: "rgba(230,230,230,0.1)",
   },
 }));

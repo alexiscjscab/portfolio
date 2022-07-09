@@ -42,7 +42,7 @@ const About = ({ id, dark }) => {
                   cursorStyle='|'
                   typeSpeed={80}
                   deleteSpeed={70}
-                  words={['Alexis Beas', 'Developer :)']}
+                  words={['Alexis Beas', 'Developer!']}
                 />
               </p>
 
@@ -62,7 +62,7 @@ const About = ({ id, dark }) => {
                   cursorStyle='|'
                   typeSpeed={80}
                   deleteSpeed={70}
-                  words={['Front', 'Back', 'Full Stack :)']}
+                  words={['Javascript ^^', 'Typescript :)']}
                 />
               </p>
 
@@ -81,58 +81,40 @@ const About = ({ id, dark }) => {
         <ScrollAnimation animateIn='flipInY' animateOut='fadeOutLeft'>
           <Description>
             <div className='contentOne'>
+              <div className='aboutMe'>
+                <p>About Me</p>
+                <ul>
+                  <li>I am 23 years old, from Cordoba Argentina</li>
 
-            <div className='aboutMe'>
-              <p>About Me</p>
-              <ul>
-                <li>
-                I am 23 years old, from Cordoba Argentina
-                </li>
-                
-                <li>
-                I currently work as a front end developer
-                </li>
-              
-              </ul>
-            </div>
+                  <li>I currently work as a front end developer</li>
+                </ul>
+              </div>
 
-            <div className='academic'>
-              <p>Studies / Practices </p>
-              <ul>
-                <li>Henry Bootcamp (Full Stack Student) 2021 💻</li>
-                <li>Alkemy Job Ready (Node / React) 2021-2022 💼</li>
-              </ul>
-            </div>
-
+              <div className='academic'>
+                <p>Studies / Practices </p>
+                <ul>
+                  <li>Henry Bootcamp (Full Stack Student) 2021 💻</li>
+                  <li>Alkemy Job Ready (Node / React) 2021-2022 💼</li>
+                </ul>
+              </div>
             </div>
             <div className='contentTwo'>
-                <div className='hobbies'>
-              <p>My Hobbies</p>
-              <ul>
-                <li>
-                  Football ⚽
-                </li>
-                <li>
-                  Basketball 🏀
-                </li>
-                <li>
-                  Videogames 🎮
-                </li>
-                <li>
-                  Rock N' Roll 🤘🏽
-                </li>
-              </ul>
+              <div className='hobbies'>
+                <p>My Hobbies</p>
+                <ul>
+                  <li>Football ⚽</li>
+                  <li>Basketball 🏀</li>
+                  <li>Videogames 🎮</li>
+                  <li>Rock N' Roll 🤘🏽</li>
+                </ul>
+              </div>
             </div>
-            </div>
-            
-
           </Description>
         </ScrollAnimation>
       </div>
     </div>
   );
 };
-
 
 export default About;
 
@@ -157,128 +139,114 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Description = styled.div`
-    width: 100vw;
-    margin-top: 2 rem;
+  width: 100vw;
+  margin-top: 2 rem;
   .contentOne {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: default;
+    .aboutMe {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+      border-radius: 10px;
+      background: transparent;
+      transition: all 0.3s ease-in-out;
+      margin-top: 5px;
+      &:hover {
+        transform: scale(1.1) translateY(-5px);
+      }
+      p {
+        font-family: 'Josefin Sans', sans-serif;
+        border-bottom: 1px solid #fff;
+        letter-spacing: 1px;
+        font-weight: 700;
+        margin: 5px 0;
+      }
+      ul {
+        list-style: none;
+        color: #000;
+        margin: 2px;
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 800;
+        text-align: center;
+        color: rgba(0, 0, 0, 1);
+      }
+    }
 
-    display: flex;
-  align-items: center;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  padding: 10px;
-  margin-top: 10px;
-  cursor: default;
-  .aboutMe {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    border-radius: 10px;
-    background: rgba(230,230,230,0.4);
-    box-shadow: 0px 0px 10px #000;
-    transition: all 0.3s ease-in-out;
-    margin-top: 5px;
-    &:hover{
-      transform: scale(1.1) translateY(-5px);
-      box-shadow: 0px 0px 5px #fff inset, 0px 0px 10px #000;
-    }
-    p {
-      font-family: 'Josefin Sans', sans-serif;
-      border-bottom: 1px solid #fff;
-      letter-spacing: 1px;
-      font-weight: 700;
-      margin: 5px 0;
-    }
-    ul {
-      list-style: none;
-      color: #000;
-      margin: 2px;
-      font-family: 'Josefin Sans', sans-serif;
-      font-weight: 800;
-      text-align: center;
-      color: rgba(0,0,0,1);
-      text-shadow: 0px 0px 2px #fff;
-      
-    }
-  }
-  
-  .academic {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    padding: 5px;
-    border-radius: 10px;
-    background: rgba(230,230,230,0.4);
-    box-shadow: 0px 0px 10px #000;
-    transition: all 0.3s ease-in-out;
-    margin-top: 5px;
-    &:hover{
-      transform: scale(1.1) translateY(-5px);
-      box-shadow: 0px 0px 5px #fff inset, 0px 0px 10px #000;
-    }
-    p {
-      font-family: 'Josefin Sans', sans-serif;
-      border-bottom: 1px solid #fff;
-      letter-spacing: 1px;
-      font-weight: 700;
-      margin: 5px 0;
-    }
-    ul {
-      list-style: none;
-      color: #000;
-      margin: 2px;
-      font-family: 'Josefin Sans', sans-serif;
-      font-weight: 800;
-      text-align: center;
-      color: rgba(0,0,0,1);
-      text-shadow: 0px 0px 2px #fff;
-      
-    }
-  }
-}
-
-.contentTwo {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 5px 0;
-  .hobbies {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    border-radius: 10px;
-    background: rgba(230,230,230,0.4);
-    box-shadow: 0px 0px 10px #000;
-    transition: all 0.3s ease-in-out;
-    &:hover{
-      transform: scale(1.1) translateY(-5px);
-      box-shadow: 0px 0px 5px #fff inset, 0px 0px 10px #000;
-    }
-    p {
-      font-family: 'Josefin Sans', sans-serif;
-      border-bottom: 1px solid #fff;
-      letter-spacing: 1px;
-      font-weight: 700;
-      margin: 5px 0;
-    }
-    ul {
-      list-style: none;
-      color: #000;
-      margin: 2px;
-      font-family: 'Josefin Sans', sans-serif;
-      font-weight: 800;
-      text-align: center;
-      color: rgba(0,0,0,1);
-      text-shadow: 0px 0px 2px #fff;
+    .academic {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding: 5px;
+      border-radius: 10px;
+      background: transparent;
+      transition: all 0.3s ease-in-out;
+      margin-top: 5px;
+      &:hover {
+        transform: scale(1.1) translateY(-5px);
+      }
+      p {
+        font-family: 'Josefin Sans', sans-serif;
+        border-bottom: 1px solid #fff;
+        letter-spacing: 1px;
+        font-weight: 700;
+        margin: 5px 0;
+      }
+      ul {
+        list-style: none;
+        color: #000;
+        margin: 2px;
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 800;
+        text-align: center;
+        color: rgba(0, 0, 0, 1);
+      }
     }
   }
 
-}
-
+  .contentTwo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 4px 0;
+    .hobbies {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 5px;
+      border-radius: 10px;
+      background: transparent;
+      transition: all 0.3s ease-in-out;
+      &:hover {
+        transform: scale(1.1) translateY(-5px);
+      }
+      p {
+        font-family: 'Josefin Sans', sans-serif;
+        border-bottom: 1px solid #fff;
+        letter-spacing: 1px;
+        font-weight: 700;
+        margin: 5px 0;
+      }
+      ul {
+        list-style: none;
+        color: #000;
+        margin: 2px;
+        font-family: 'Josefin Sans', sans-serif;
+        font-weight: 800;
+        text-align: center;
+        color: rgba(0, 0, 0, 1);
+      }
+    }
+  }
 `;
 
 const Ctn = styled.div`
