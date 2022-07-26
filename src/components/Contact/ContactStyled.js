@@ -35,7 +35,7 @@ export const Form = styled.form`
     font-size: 18px;
     font-weight: 500;
     z-index: 9;
-    width: 160px;
+    width: 140px;
     margin-right: 50px;
     @media screen and (max-width: 380px) {
       margin-right: 20px;
@@ -44,7 +44,7 @@ export const Form = styled.form`
   }
 
   .email input {
-    width: 220px;
+    width: 210px;
   }
 
   .input label {
@@ -68,9 +68,9 @@ export const Form = styled.form`
     //overflow: hidden;
     outline: 0;
     resize: none;
-    height: 240px;
+    height: 210px;
     margin: 0 auto;
-    width: 280px;
+    width: 240px;
     /* background: rgba(32, 130, 216, 0.455); */
     background: rgba(155, 155, 155, 0.2);
     border: none;
@@ -152,17 +152,16 @@ export const Footer = styled.footer`
   text-align: center;
   background: #000;
   color: #fff;
-  padding: 1.5rem;
   margin: 0 auto;
-  width: 100%;
+  min-width: 100vw;
   h3 {
     margin: 10px 0px;
     font-size: 24px;
     cursor: default;
   }
   .social-icons {
-    padding: 0.5rem;
-    margin-top: 0.2rem;
+    padding: 0.2rem;
+    margin-top: 0.1rem;
     display: flex;
     align-items: center;
     justify-content: space-around;

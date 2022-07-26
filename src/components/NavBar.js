@@ -111,6 +111,7 @@ const useStyles = makeStyles((theme) => ({
     position: "sticky",
     top: "0",
     height: "60px",
+    minWidth: '100vw',
     display: "flex",
     justifyContent: "center",
     alignItems: "center",
@@ -133,11 +134,11 @@ const useStyles = makeStyles((theme) => ({
   menuButton: {
     display: "none",
     [theme.breakpoints.down("sm")]: {
-      display: "block",
+      display: 'block',
       color: "#2082d8",
       position: "absolute",
       top: 0,
-      right: 12,
+      right: 60
     },
   },
   drawer: {
