@@ -5,60 +5,30 @@ import InfoTwoToneIcon from "@material-ui/icons/InfoTwoTone";
 import EmojiObjectsTwoToneIcon from "@material-ui/icons/EmojiObjectsTwoTone";
 import ContactMailTwoToneIcon from "@material-ui/icons/ContactMailTwoTone";
 
-import imgA1 from "../components/imgProject/alkemy/1.png";
-import imgA2 from "../components/imgProject/alkemy/2.png";
-import imgA3 from "../components/imgProject/alkemy/3.png";
-import imgA4 from "../components/imgProject/alkemy/4.png";
-import imgA5 from "../components/imgProject/alkemy/5.png";
-import imgA6 from "../components/imgProject/alkemy/6.png";
+import imgE1 from "../assets/img/imgProject/ecommerce/1.png";
+import imgE2 from "../assets/img/imgProject/ecommerce/2.png";
+import imgE3 from "../assets/img/imgProject/ecommerce/3.png";
+import imgE4 from "../assets/img/imgProject/ecommerce/4.png";
+import imgE6 from "../assets/img/imgProject/ecommerce/6.png";
+import imgE7 from "../assets/img/imgProject/ecommerce/7.png";
 
+import imgR1 from "../assets/img/imgProject/rick/1Rick.png";
+import imgR2 from "../assets/img/imgProject/rick/2Rick.png";
+import imgR3 from "../assets/img/imgProject/rick/3Rick.png";
+import imgR4 from "../assets/img/imgProject/rick/4Rick.png";
+import imgR5 from "../assets/img/imgProject/rick/5Rick.png";
+import imgR6 from "../assets/img/imgProject/rick/6Rick.png";
 
-import imgE1 from "../components/imgProject/ecommerce/1.png";
-import imgE2 from "../components/imgProject/ecommerce/2.png";
-import imgE3 from "../components/imgProject/ecommerce/3.png";
-import imgE4 from "../components/imgProject/ecommerce/4.png";
-import imgE6 from "../components/imgProject/ecommerce/6.png";
-import imgE7 from "../components/imgProject/ecommerce/7.png";
-
-import imgR1 from "../components/imgProject/rick/1Rick.png";
-import imgR2 from "../components/imgProject/rick/2Rick.png";
-import imgR3 from "../components/imgProject/rick/3Rick.png";
-import imgR4 from "../components/imgProject/rick/4Rick.png";
-import imgR5 from "../components/imgProject/rick/5Rick.png";
-import imgR6 from "../components/imgProject/rick/6Rick.png";
-
-import imgO1 from "../components/imgProject/ong/1alkemy.png";
-import imgO2 from "../components/imgProject/ong/2alkemy.png";
-import imgO3 from "../components/imgProject/ong/3alkemy.png";
-import imgO4 from "../components/imgProject/ong/4alkemy.png";
-import imgO5 from "../components/imgProject/ong/5alkemy.png";
-import imgO6 from "../components/imgProject/ong/6alkemy.png";
-import imgO7 from "../components/imgProject/ong/7alkemy.png";
-import imgO8 from "../components/imgProject/ong/8alkemy.png";
-import imgO9 from "../components/imgProject/ong/9alkemy.png";
-import imgO10 from "../components/imgProject/ong/10alkemy.png";
-
-// Alkemy Challenge
-export const imgA = [
-  {
-    img: imgA1,
-  },
-  {
-    img: imgA2,
-  },
-  {
-    img: imgA3,
-  },
-  {
-    img: imgA4,
-  },
-  {
-    img: imgA5,
-  },
-  {
-    img: imgA6,
-  },
-];
+import imgO1 from "../assets/img/imgProject/ong/1alkemy.png";
+import imgO2 from "../assets/img/imgProject/ong/2alkemy.png";
+import imgO3 from "../assets/img/imgProject/ong/3alkemy.png";
+import imgO4 from "../assets/img/imgProject/ong/4alkemy.png";
+import imgO5 from "../assets/img/imgProject/ong/5alkemy.png";
+import imgO6 from "../assets/img/imgProject/ong/6alkemy.png";
+import imgO7 from "../assets/img/imgProject/ong/7alkemy.png";
+import imgO8 from "../assets/img/imgProject/ong/8alkemy.png";
+import imgO9 from "../assets/img/imgProject/ong/9alkemy.png";
+import imgO10 from "../assets/img/imgProject/ong/10alkemy.png";
 
 
 // Rick and morty React
@@ -83,6 +53,7 @@ export const imgR = [
   },
 ];
 
+// E-commerce
 export const imgE = [
   {
     img: imgE1,
@@ -103,7 +74,6 @@ export const imgE = [
     img: imgE7,
   },
 ];
-
 
 // ONG ALKEMY
 export const imgOng = [
@@ -157,7 +127,7 @@ export const icons = [
     link: 'mailto:alexiscjscab@gmail.com',
   },
 ];
-
+// items navBar
 export const items = [
   {
     id: "about",
