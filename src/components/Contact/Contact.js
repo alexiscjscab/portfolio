@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { makeStyles } from '@material-ui/core';
 import swal from 'sweetalert';
 import ScrollAnimation from 'react-animate-on-scroll';
@@ -14,6 +14,20 @@ const Contact = ({ id, dark }) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [year, setYear] = useState('');
+  const [hours, setHours] = useState('');
+  const [minutes, setMinutes] = useState('');
+  const [seconds, setSeconds] = useState('');
+
+  useEffect(() => {
+    setInterval(() => {
+      const dateObj = new Date();
+      setYear(dateObj.getFullYear());
+      setHours(dateObj.getHours());
+      setMinutes(dateObj.getMinutes());
+      setSeconds(dateObj.getSeconds())
+    }, 1000);
+  }, []);
 
   async function sendEmail(e) {
     e.preventDefault();
@@ -130,13 +144,14 @@ const Contact = ({ id, dark }) => {
             duration={500}
             offset={-70}
           >
-            <BiUpArrowCircle size={75} className='up'/>
+            <BiUpArrowCircle size={75} className='up' />
           </Link>
         </ArrowUp>
-        
 
         <Footer>
-          <h3>Alexis Beas Developer</h3>
+          <h3>
+            Alexis Beas Developer {year} - {hours < 10 ? `0${hours}` : hours }:{minutes < 10 ? `0${minutes}` : minutes }:{seconds < 10 ? `0${seconds}` : seconds}
+          </h3>
           <div className='social-icons'>
             {icons.map(({ icon, text, link }, index) => (
               // eslint-disable-next-line react/jsx-no-target-blank
@@ -149,7 +164,6 @@ const Contact = ({ id, dark }) => {
             ))}
           </div>
         </Footer>
-        
       </div>
     </main>
   );
@@ -168,7 +182,7 @@ const useStyles = makeStyles((theme) => ({
   sectiondark: {
     minHeight: '100vh',
     backgroundColor: '#ddd',
-    background: 'url('+Animated+')',
+    background: 'url(' + Animated + ')',
     color: '#000',
     backgroundSize: '100% 100%',
   },
@@ -184,5 +198,3 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '10px',
   },
 }));
-
-

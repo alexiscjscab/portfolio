@@ -13,9 +13,9 @@ const Loader = () => {
         cursorStyle='.'
         typeSpeed={80}
         deleteSpeed={70}
-        words={['Load', 'Loading',]}
+        words={['Loading', 'Loading',]}
       />
-      <img src={icon} alt='react' />
+      <img src={icon} alt='Belgrano de Cordoba' />
     </Spinner>
   );
 };

@@ -156,8 +156,9 @@ export const Footer = styled.footer`
   min-width: 100vw;
   h3 {
     margin: 10px 0px;
-    font-size: 24px;
+    font-size: 20px;
     cursor: default;
+    letter-spacing: 1px;
   }
   .social-icons {
     padding: 0.2rem;
