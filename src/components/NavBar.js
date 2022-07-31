@@ -56,6 +56,7 @@ const NavBar = () => {
             </Link>
           ))}
         </List>
+
         <IconButton
           edge='end'
           className={classes.menuButton}
@@ -110,12 +111,10 @@ export default NavBar;
 const useStyles = makeStyles((theme) => ({
   root: {
     fontFamily: "'Josefin Sans', sans-serif",
+    position: 'sticky',
   },
   toolbar: {
-    position: 'sticky',
-    top: '0',
     height: '60px',
-    minWidth: '100vw',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -127,7 +126,8 @@ const useStyles = makeStyles((theme) => ({
     '& a': {
       fontSize: '1.4rem',
       fontWeight: 'bold',
-      marginLeft: theme.spacing(3),
+      marginLeft: theme.spacing(2),
+      marginRight: theme.spacing(2),
       '&:hover': {
         cursor: 'pointer',
         color: '#2082d8',
@@ -142,7 +142,7 @@ const useStyles = makeStyles((theme) => ({
       color: '#2082d8',
       position: 'absolute',
       top: 0,
-      right: 60,
+      right: 30,
     },
   },
   drawer: {

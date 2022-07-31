@@ -12,6 +12,13 @@ import imgE4 from "../assets/img/imgProject/ecommerce/4.png";
 import imgE6 from "../assets/img/imgProject/ecommerce/6.png";
 import imgE7 from "../assets/img/imgProject/ecommerce/7.png";
 
+import imgS1 from "../assets/img/imgProject/sports/1-sports.jpeg";
+import imgS2 from "../assets/img/imgProject/sports/2-sports.jpeg";
+import imgS3 from "../assets/img/imgProject/sports/3-sports.jpeg";
+import imgS4 from "../assets/img/imgProject/sports/4-sports.jpeg";
+import imgS5 from "../assets/img/imgProject/sports/5-sports.jpeg";
+import imgS6 from "../assets/img/imgProject/sports/6-sports.jpeg";
+
 import imgR1 from "../assets/img/imgProject/rick/1Rick.png";
 import imgR2 from "../assets/img/imgProject/rick/2Rick.png";
 import imgR3 from "../assets/img/imgProject/rick/3Rick.png";
@@ -51,6 +58,23 @@ export const imgR = [
   {
     img: imgR6,
   },
+];
+
+export const imgS = [
+  {
+    img: imgS1
+  },
+  {
+    img: imgS2
+  },{
+    img: imgS3
+  },{
+    img: imgS4
+  },{
+    img: imgS5
+  },{
+    img: imgS6
+  }
 ];
 
 // E-commerce

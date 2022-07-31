@@ -17,3 +17,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+.Container {
+  min-width: 100vw;
+  position: absolute;
+  padding: 0.2rem;
+}

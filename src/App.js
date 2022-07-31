@@ -7,7 +7,7 @@ import Contact from './components/Contact/Contact';
 import MyWork from './components/MyWork/MyWork';
 import Skills from './components/Skills/Skills';
 import Loader from './components/Loader';
-
+import './index.css'
 function App() {
   const [loading, setLoading] = useState(false);
 
@@ -20,13 +20,13 @@ function App() {
   return (
     <>
       {loading ? (
-        <>
+        <div className='Container'>
           <NavBar />
           <About title='About Me' id='about' dark={false} />
           <Skills title='Skills' id='skills' dark={true} />
           <MyWork title='My Work' id='work' dark={false} />
           <Contact title='Contact' id='contact' dark={true} />
-        </>
+        </div>
       ) : (
         <Loader />
       )}
