@@ -1,6 +1,7 @@
 * {
   margin: 0px;
   padding: 0px;
+  box-sizing: border-box;
 }
 
 body {
@@ -22,5 +23,4 @@ code {
 .Container {
   min-width: 100vw;
   position: absolute;
-  padding: 0.2rem;
 }

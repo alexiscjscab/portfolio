@@ -50,7 +50,7 @@ const Spinner = styled.div`
     height: 100px;
     width: 100px;
     animation-name: ${rotate};
-    animation-duration: 3s;
+    animation-duration: 2.5s;
     animation-iteration-count: infinite;
   }
 `;

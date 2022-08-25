@@ -23,11 +23,11 @@ const NavBar = () => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
 
-  const [colorChange, setColorChange] = useState(false);
+  const [heightChange, setHeightChange] = useState(false);
 
   const changeColorNavBar = () => {
-    if (window.scrollY >= 500) setColorChange(true);
-    else setColorChange(false);
+    if (window.scrollY >= 400) setHeightChange(true);
+    else setHeightChange(false);
   };
 
   window.addEventListener('scroll', changeColorNavBar);
@@ -36,8 +36,8 @@ const NavBar = () => {
     <AppBar
       className={classes.root}
       style={{
-        backgroundColor: colorChange ? '#000' : 'rgba(230,230,230,0.88)',
-        color: colorChange ? '#fff' : '#000',
+        height: heightChange ? '60px' : '72px',
+        background: 'rgba(0,0,0,0.9)'
       }}
     >
       <Toolbar className={classes.toolbar}>
@@ -66,7 +66,7 @@ const NavBar = () => {
         </IconButton>
       </Toolbar>
       {/* Menu despleglable */}
-      <Drawer anchor='right' open={open} onClose={() => setOpen(false)}>
+      <Drawer anchor='right' open={open} onClose={() => setOpen(false)} >
         <div className={classes.drawer}>
           <div className={classes.iconButton}>
             <IconButton onClick={() => setOpen(false)}>
@@ -114,7 +114,6 @@ const useStyles = makeStyles((theme) => ({
     position: 'sticky',
   },
   toolbar: {
-    height: '60px',
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
@@ -124,7 +123,7 @@ const useStyles = makeStyles((theme) => ({
       display: 'none',
     },
     '& a': {
-      fontSize: '1.4rem',
+      fontSize: '2rem',
       fontWeight: 'bold',
       marginLeft: theme.spacing(2),
       marginRight: theme.spacing(2),
@@ -142,16 +141,17 @@ const useStyles = makeStyles((theme) => ({
       color: '#2082d8',
       position: 'absolute',
       top: 0,
-      right: 30,
+      right: 10
     },
   },
   drawer: {
     fontFamily: "'Josefin Sans', sans-serif",
     background: '#2082d8',
     position: 'relative',
+    minHeight: '100%'
   },
   background: {
-    height: '100vh',
+    // minHeight: '100vh',
   },
   sidebar: {
     '& h5': {

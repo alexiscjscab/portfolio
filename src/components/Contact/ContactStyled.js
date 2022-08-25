@@ -153,7 +153,7 @@ export const Footer = styled.footer`
   background: #000;
   color: #fff;
   margin: 0 auto;
-  min-width: 100vw;
+  min-width: 100%;
   h3 {
     margin: 10px 0px;
     font-size: 20px;

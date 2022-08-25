@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Description = styled.div`
-  width: 100vw;
+  width: 100%;
   margin-top: 2 rem;
   .contentOne {
     display: flex;
