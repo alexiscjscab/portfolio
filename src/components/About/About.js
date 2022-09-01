@@ -3,7 +3,7 @@ import { makeStyles } from '@material-ui/core';
 import ScrollAnimation from 'react-animate-on-scroll';
 import { Typewriter } from 'react-simple-typewriter';
 import { AiFillFilePdf } from 'react-icons/ai';
-
+import { icons } from '../../array/index';
 import wawe from '../../assets/background/WaweLightBlue.svg';
 import img from '../../assets/img/yo.jpeg';
 import cv from '../../assets/cv/cv.pdf';
@@ -76,34 +76,39 @@ const About = ({ id, dark }) => {
 
         <ScrollAnimation animateIn='flipInY' animateOut='fadeOutLeft'>
           <Description>
-            <div className='contentOne'>
-              <div className='aboutMe'>
-                <p>About Me</p>
-                <ul>
-                  <li>I am 23 years old, from Cordoba Argentina</li>
-
-                  <li>I currently work as a front end developer</li>
-                </ul>
-              </div>
-
-              <div className='academic'>
-                <p>Studies / Practices </p>
-                <ul>
-                  <li>Henry Bootcamp (Full Stack Student) 2021 💻</li>
-                  <li>Alkemy Job Ready (Node / React) 2021-2022 💼</li>
-                </ul>
-              </div>
-            </div>
-            <div className='contentTwo'>
-              <div className='hobbies'>
-                <p>My Hobbies</p>
-                <ul>
-                  <li>Football ⚽</li>
-                  <li>Basketball 🏀</li>
-                  <li>Videogames 🎮</li>
-                  <li>Rock N' Roll 🤘🏽</li>
-                </ul>
-              </div>
+            <p>
+              I am 24 years old, I am from Cordoba, Argentina. <br />I currently
+              work as a front end programmer at "Grupo LPA" as a collaborator at
+              "Banco Galicia"
+            </p>
+            <p>
+              In 2021 I completed the intensive full stack developer bootcamp at 
+              <a
+                target='_blank'
+                href='https://www.soyhenry.com/'
+                rel='noreferrer'
+              >
+                Henry 
+              </a>
+                and then a "Job Ready" acceleration in 
+              <a
+                target='_blank'
+                href='https://www.alkemy.org/acceleration'
+                rel='noreferrer'
+              >
+                Alkemy
+              </a>
+            </p>
+            <div className='redes-sociales'>
+            {icons.map(({ icon, text, link }, index) => (
+              // eslint-disable-next-line react/jsx-no-target-blank
+              <a href={link} target='_blank' rel={text} key={index}>
+                  <p>
+                    {text} <br/>
+                    {icon} 
+                  </p>
+              </a>
+            ))}
             </div>
           </Description>
         </ScrollAnimation>
@@ -133,5 +138,3 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
   },
 }));
-
-

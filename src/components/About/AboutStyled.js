@@ -1,114 +1,45 @@
 import styled from 'styled-components';
 
 export const Description = styled.div`
-  width: 100%;
-  margin-top: 2 rem;
-  .contentOne {
+  text-align: center;
+  font-weight: 700;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  transition: 0.3s all ease-in-out;
+  cursor: default;
+  &:hover{
+    transform: scale(1.1);
+    background: rgba(230,230,230,0.2);
+    border-radius: 10px;
+  }
+  a {
+    font-weight: 800;
+    text-decoration: none;
+    color: #000;
+    letter-spacing: 1px;
+    transition: 0.3s all ease-in-out;
+    margin: 4px;
+    &:hover{
+      color: #00f;
+    }
+  }
+
+  .redes-sociales{
+    padding: 0.5rem;
+    margin-top: 1.2rem;
     display: flex;
     align-items: center;
     justify-content: space-around;
     flex-wrap: wrap;
-    padding: 10px;
-    margin-top: 10px;
-    cursor: default;
-    .aboutMe {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 5px;
-      border-radius: 10px;
-      background: transparent;
+    text-align: center;
+    a {
+      text-decoration: none;
+      color: #000;
+      margin: 0 5px;
       transition: all 0.3s ease-in-out;
-      margin-top: 5px;
-      &:hover {
-        transform: scale(1.1) translateY(-5px);
-      }
-      p {
-        font-family: 'Josefin Sans', sans-serif;
-        border-bottom: 1px solid #fff;
-        letter-spacing: 1px;
-        font-weight: 700;
-        margin: 5px 0;
-        text-shadow: 2px 2px 2px #000;
-      }
-      ul {
-        list-style: none;
-        color: rgba(210,210,210,1);
-        margin: 2px;
-        font-family: 'Josefin Sans', sans-serif;
-        font-weight: 800;
-        text-align: center;
-        text-shadow: 2px 2px 2px #000;
-      }
-    }
-
-    .academic {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      padding: 5px;
-      border-radius: 10px;
-      background: transparent;
-      transition: all 0.3s ease-in-out;
-      margin-top: 5px;
-      &:hover {
-        transform: scale(1.1) translateY(-5px);
-      }
-      p {
-        font-family: 'Josefin Sans', sans-serif;
-        border-bottom: 1px solid #fff;
-        letter-spacing: 1px;
-        font-weight: 700;
-        margin: 5px 0;
-        text-shadow: 2px 2px 2px #000;
-      }
-      ul {
-        list-style: none;
-        color: rgba(210,210,210,1);
-        margin: 2px;
-        font-family: 'Josefin Sans', sans-serif;
-        font-weight: 800;
-        text-align: center;
-        text-shadow: 2px 2px 2px #000;
-      }
-    }
-  }
-
-  .contentTwo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 4px 0;
-    .hobbies {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      padding: 5px;
-      border-radius: 10px;
-      background: transparent;
-      transition: all 0.3s ease-in-out;
-      &:hover {
-        transform: scale(1.1) translateY(-5px);
-      }
-      p {
-        font-family: 'Josefin Sans', sans-serif;
-        border-bottom: 1px solid #fff;
-        letter-spacing: 1px;
-        font-weight: 700;
-        margin: 5px 0;
-        text-shadow: 2px 2px 2px #000;
-      }
-      ul {
-        list-style: none;
-        color: rgba(210,210,210,1);
-        margin: 2px;
-        font-family: 'Josefin Sans', sans-serif;
-        font-weight: 800;
-        text-align: center;
-        text-shadow: 2px 2px 2px #000;
+      &:hover{
+        color: #00f;
       }
     }
   }
@@ -119,17 +50,16 @@ export const CtnAbout = styled.div`
   justify-content: space-evenly;
   flex-wrap: wrap;
   align-items: center;
-  padding: 10px;
+  padding: 5px;
   margin-top: 4rem;
   .imagen {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px 0 10px 20px;
 
     img {
-      height: 260px;
-      width: 260px;
+      height: 220px;
+      width: 220px;
       border-radius: 50%;
       filter: sepia(10%);
     }
@@ -145,7 +75,6 @@ export const CtnAbout = styled.div`
 
 export const Cv = styled.div`
   margin-top: 15px;
-
   a {
     text-decoration: none;
     color: #000;
@@ -154,7 +83,7 @@ export const Cv = styled.div`
     font-weight: bold;
     background: rgba(255, 255, 255, 0.5);
     border-radius: 10px;
-    padding: 5px;
+    padding: 2.5px;
     transition: 0.3s ease-in-out;
     &:hover {
       color: #fff;

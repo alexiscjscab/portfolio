@@ -1,9 +1,9 @@
 /* eslint-disable react/jsx-no-target-blank */
-import React, { useRef, useEffect } from "react";
-import styled from "styled-components";
+import React, { useRef, useEffect } from 'react';
+import styled from 'styled-components';
 
-import { AiFillLeftCircle, AiFillRightCircle } from "react-icons/ai";
-import { SiGithub } from "react-icons/si";
+import { AiFillLeftCircle, AiFillRightCircle } from 'react-icons/ai';
+import { SiGithub } from 'react-icons/si';
 
 const Slide = ({ img, type, description, link, linkTwo }) => {
   const slideshow = useRef(null);
@@ -26,7 +26,7 @@ const Slide = ({ img, type, description, link, linkTwo }) => {
 
         const transicion = () => {
           // cambio
-          slideshow.current.style.transition = "none";
+          slideshow.current.style.transition = 'none';
           slideshow.current.style.transform = `translateX(0)`;
 
           /// mandar primer elemento al final
@@ -34,12 +34,12 @@ const Slide = ({ img, type, description, link, linkTwo }) => {
 
           // remove evenListener
 
-          slideshow.current.removeEventListener("transitionend", transicion);
+          slideshow.current.removeEventListener('transitionend', transicion);
         };
 
         // eventListener
 
-        slideshow.current.addEventListener("transitionend", transicion);
+        slideshow.current.addEventListener('transitionend', transicion);
       }
     } catch (error) {
       console.log(error);
@@ -58,14 +58,14 @@ const Slide = ({ img, type, description, link, linkTwo }) => {
           slideshow.current.firstChild
         );
 
-        slideshow.current.style.transition = "none";
+        slideshow.current.style.transition = 'none';
 
         const tamañoSlide = slideshow.current.children[0].offsetWidth;
 
         slideshow.current.style.transform = `translateX(-${tamañoSlide}px)`;
 
         setTimeout(() => {
-          slideshow.current.style.transition = "100ms ease-out all";
+          slideshow.current.style.transition = '100ms ease-out all';
           slideshow.current.style.transform = `translateX(0px)`;
         }, 30);
       }
@@ -80,11 +80,11 @@ const Slide = ({ img, type, description, link, linkTwo }) => {
         siguiente();
       }, 5000);
 
-      slideshow.current.addEventListener("mouseenter", () => {
+      slideshow.current.addEventListener('mouseenter', () => {
         clearInterval(intervaloSlideshow.current);
       });
 
-      slideshow.current.addEventListener("mouseleave", () => {
+      slideshow.current.addEventListener('mouseleave', () => {
         intervaloSlideshow.current = setInterval(() => {
           siguiente();
         }, 5000);
@@ -100,9 +100,9 @@ const Slide = ({ img, type, description, link, linkTwo }) => {
         {img.map(({ img }, index) => (
           <Slider key={index}>
             <div>
-              <img src={img} alt="" height={140} />
+              <img src={img} alt='' height={140} />
             </div>
-            <div className="button">
+            <div className='button'>
               <span>
                 <AiFillLeftCircle size={30} onClick={anterior} />
               </span>
@@ -116,14 +116,13 @@ const Slide = ({ img, type, description, link, linkTwo }) => {
       <Description>
         <h4>{type}</h4>
         <Icons>
-          <a href={link} target="_blank" rel="noopener noreferrer">
+          <a href={link} target='_blank' rel='noopener noreferrer'>
             <p>
-              
               <SiGithub size={30} />
             </p>
           </a>
           {linkTwo && (
-            <a href={linkTwo} target="_blank" rel="noopener noreferrer">
+            <a href={linkTwo} target='_blank' rel='noopener noreferrer'>
               <p>
                 <SiGithub size={30} />
               </p>
@@ -141,11 +140,9 @@ export default Slide;
 const Slider = styled.div`
   min-width: 100%;
   overflow: hidden;
-  transition: 0.3s ease all;
+  transition: 0.3s all ease-in-out;
   z-index: 100;
-  /* max-height: 500px; */
   
-
   img {
     width: 500px;
     height: 220px;
@@ -169,18 +166,19 @@ const Slider = styled.div`
     display: flex;
     justify-content: space-between;
     position: relative;
-    top: -30px;
+    top: -10px;
     margin: 2px;
   
-
-  span {
-    color: #250736;
-    cursor: pointer;
-    margin: 5px;
-    transition: 1s ease-out all;
-    &:hover {
-      color: #555;
-      transform: scale(1.4);
+    span {
+      color: #000;
+      cursor: pointer;
+      margin: 2px;
+      transition: 1s all ease-in-out;
+      text-shadow: 2px 2px #fff;
+      &:hover {
+        color: #555;
+        transform: scale(1.4);
+      }
     }
   }
 `;
@@ -190,14 +188,14 @@ const CtnSlider = styled.div`
   flex-wrap: nowrap;
 `;
 const Description = styled.div`
-  padding: 10px;
-  margin-bottom: 15px;
+  padding: 0.5rem;
+  margin-bottom: 10px;
   background: rgba(255, 255, 255, 0.5);
-  .description{ 
+  .description {
     p {
-    color: #000;
-    position: relative;
-    font-size: 20px;
+      color: #000;
+      position: relative;
+      font-size: 18px;
     }
   }
   h4 {

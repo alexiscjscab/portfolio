@@ -10,7 +10,6 @@ const MyWork = ({ id, dark }) => {
   return (
     <main className={`${classes.section} ${dark && classes.sectiondark}`}>
       <div className={classes.sectionContent}>
-        <div className={classes.ctn}>
           <Project id={id}>
             <ScrollAnimation animateIn='wobble' initiallyVisible={true}>
               <h3>Projects</h3>
@@ -58,7 +57,6 @@ const MyWork = ({ id, dark }) => {
               />
             </div>
           </Project>
-        </div>
       </div>
     </main>
   );
@@ -82,12 +80,7 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     justifyContent: 'center',
     flexDirection: 'column',
-  },
-  ctn: {
-    textAlign: 'center',
-    display: 'flex',
-    justifyContent: 'center',
     alignItems: 'center',
-    flexDirection: 'column',
+    textAlign: 'center'
   },
 }));

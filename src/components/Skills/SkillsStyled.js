@@ -70,7 +70,6 @@ export const ListSkills = styled.div`
 `;
 
 export const CtnSkills = styled.div`
-  margin: 30px 0;
   text-align: center;
   h2 {
     display: inline-block;

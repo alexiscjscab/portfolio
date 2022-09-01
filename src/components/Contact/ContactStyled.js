@@ -65,20 +65,18 @@ export const Form = styled.form`
   }
 
   .inputTextarea textarea {
-    //overflow: hidden;
     outline: 0;
     resize: none;
     height: 210px;
     margin: 0 auto;
     width: 240px;
-    /* background: rgba(32, 130, 216, 0.455); */
     background: rgba(155, 155, 155, 0.2);
     border: none;
     border-radius: 20px;
     text-align: left;
     font-size: 17px;
     font-weight: 300;
-    padding: 9px;
+    padding: 5px;
     color: #000;
     border-radius: 30px;
     box-shadow: 15px 12px 0 #2082d8;

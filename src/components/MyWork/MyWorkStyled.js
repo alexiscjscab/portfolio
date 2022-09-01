@@ -18,7 +18,7 @@ export const Project = styled.div`
   }
 
   h3 {
-    margin: 30px;
+    margin: 25px;
     font-size: 40px;
     color: #fff;
     border-bottom: 2px solid #fff;

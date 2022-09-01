@@ -100,12 +100,7 @@ const useStyles = makeStyles((theme) => ({
     color: '#000',
     backgroundColor: '#ddd',
     backgroundSize: '100% 100%',
-  },
-  sectionContent: {
-    display: 'flex',
-    justifyContent: 'center',
-    flexDirection: 'column',
-  },
+  }
 }));
 
 
